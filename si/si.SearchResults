@@ -1,6 +1,1 @@
----- DHT11 Matches (5 in 3 files) ----
-DHT11.c (c:\users\administrator\desktop\smarthomeapp\projects\zstack\samples\smarthomeapp\source):void DHT11(void);
-DHT11.c (c:\users\administrator\desktop\smarthomeapp\projects\zstack\samples\smarthomeapp\source):void DHT11(void)   //温湿传感启动
-DHT11.h (c:\users\administrator\desktop\smarthomeapp\projects\zstack\samples\smarthomeapp\source):extern void DHT11(void);                //温湿传感启动
-SmartHomeApp.c (c:\users\administrator\desktop\smarthomeapp\projects\zstack\samples\smarthomeapp\source):#include "DHT11.h"
-SmartHomeApp.c (c:\users\administrator\desktop\smarthomeapp\projects\zstack\samples\smarthomeapp\source):  DHT11(); 
+---- IRSEND Matches (0 in 0 files) ----
