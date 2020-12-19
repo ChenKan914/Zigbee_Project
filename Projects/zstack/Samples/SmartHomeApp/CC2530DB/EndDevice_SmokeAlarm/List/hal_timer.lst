@@ -1,0 +1,2391 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         19/Dec/2020  13:37:48 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\Administrator\Desktop\SmartHomeApp\Compon #
+#                          ents\hal\target\CC2530EB\hal_timer.c               #
+#    Command line       =  -f C:\Users\Administrator\Desktop\SmartHomeApp\Pro #
+#                          jects\zstack\Samples\SmartHomeApp\CC2530DB\..\..\. #
+#                          .\Tools\CC2530DB\f8wEndev.cfg (-DCPU32MHZ          #
+#                          -DROOT=__near_func -DBLINK_LEDS) -f                #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\T #
+#                          ools\CC2530DB\f8wConfig.cfg (-DSECURE=0            #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Compon #
+#                          ents\hal\target\CC2530EB\hal_timer.c -D ZIGBEEPRO  #
+#                          -D NWK_AUTO_POLL -D ZTOOL_P1 -D xMT_TASK -D        #
+#                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                    #
+#                          LCD_SUPPORTED=DEBUG -D ENDDEVICE_SMOKEALARM -lC    #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\EndDevice_ #
+#                          SmokeAlarm\List\ -lA C:\Users\Administrator\Deskto #
+#                          p\SmartHomeApp\Projects\zstack\Samples\SmartHomeAp #
+#                          p\CC2530DB\EndDevice_SmokeAlarm\List\              #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\EndDevice_ #
+#                          SmokeAlarm\Obj\ -e --debug --core=plain            #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\Users\Administrator\Des #
+#                          ktop\SmartHomeApp\Projects\zstack\Samples\SmartHom #
+#                          eApp\CC2530DB\ -I C:\Users\Administrator\Desktop\S #
+#                          martHomeApp\Projects\zstack\Samples\SmartHomeApp\C #
+#                          C2530DB\..\SOURCE\ -I C:\Users\Administrator\Deskt #
+#                          op\SmartHomeApp\Projects\zstack\Samples\SmartHomeA #
+#                          pp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I            #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\MT\ -I C:\Users\Administrator\Desk #
+#                          top\SmartHomeApp\Projects\zstack\Samples\SmartHome #
+#                          App\CC2530DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE #
+#                          \ -I C:\Users\Administrator\Desktop\SmartHomeApp\P #
+#                          rojects\zstack\Samples\SmartHomeApp\CC2530DB\..\.. #
+#                          \..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\ -I       #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\OSAL\MCU\CCSOC\ -I                 #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\OSAL\INCLUDE\ -I                   #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\STACK\AF\ -I                       #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\STACK\NWK\ -I                      #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\STACK\SEC\ -I                      #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\STACK\SAPI\ -I                     #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\STACK\SYS\ -I                      #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\STACK\ZDO\ -I                      #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\ZMAC\F8W\ -I                       #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\ZMAC\ -I                           #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\SERVICES\SADDR\ -I                 #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\SERVICES\SDATA\ -I                 #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\MAC\INCLUDE\ -I                    #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\MAC\HIGH_LEVEL\ -I                 #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\MAC\LOW_LEVEL\srf04\ -I            #
+#                          C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\..\..\..\. #
+#                          .\..\COMPONENTS\MAC\LOW_LEVEL\srf04\SINGLE_CHIP\   #
+#                          -Ohz                                               #
+#    List file          =  C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\EndDevice_ #
+#                          SmokeAlarm\List\hal_timer.lst                      #
+#    Object file        =  C:\Users\Administrator\Desktop\SmartHomeApp\Projec #
+#                          ts\zstack\Samples\SmartHomeApp\CC2530DB\EndDevice_ #
+#                          SmokeAlarm\Obj\hal_timer.r51                       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\SmartHomeApp\Components\hal\target\CC2530EB\hal_timer.c
+      1          /**************************************************************************************************
+      2            Filename:       hal_timer.c
+      3            Revised:        $Date: 2009-03-12 16:25:22 -0700 (Thu, 12 Mar 2009) $
+      4            Revision:       $Revision: 19404 $
+      5          
+      6            Description:   This file contains the interface to the Timer Service.
+      7          
+      8          
+      9            Copyright 2006-2007 Texas Instruments Incorporated. All rights reserved.
+     10          
+     11            IMPORTANT: Your use of this Software is limited to those specific rights
+     12            granted under the terms of a software license agreement between the user
+     13            who downloaded the software, his/her employer (which must be your employer)
+     14            and Texas Instruments Incorporated (the "License").  You may not use this
+     15            Software unless you agree to abide by the terms of the License. The License
+     16            limits your use, and you acknowledge, that the Software may not be modified,
+     17            copied or distributed unless embedded on a Texas Instruments microcontroller
+     18            or used solely and exclusively in conjunction with a Texas Instruments radio
+     19            frequency transceiver, which is integrated into your product.  Other than for
+     20            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     21            works of, modify, distribute, perform, display or sell this Software and/or
+     22            its documentation for any purpose.
+     23          
+     24            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     25            PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     26            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     27            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     28            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     29            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     30            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     31            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     32            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     33            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     34            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     35          
+     36            Should you have any questions regarding your right to use this Software,
+     37            contact Texas Instruments Incorporated at www.TI.com.
+     38          **************************************************************************************************/
+     39          /*********************************************************************
+     40           NOTE: The following mapping is done between the logical timer
+     41                 names defined in HAL_TIMER.H and the physical HW timer.
+     42          
+     43                 HAL_TIMER_0 --> HW Timer 3  (8-bits)
+     44                 HAL_TIMER_2 --> HW Timer 4  (8-bits)
+     45                 HAL_TIMER_3 --> HW Timer 1  (16-bits)
+     46          
+     47           NOTE: The timer code assumes only one channel, CHANNEL 0, is used
+     48                 for each timer.  There is currently no support for other
+     49                 channels.
+     50          
+     51           NOTE: Only Output Compare Mode is supported.  There is no provision
+     52                 to support Input Capture Mode.
+     53          
+     54           NOTE: There is no support to map the output of the timers to a
+     55                 physical I/O pin
+     56          
+     57          *********************************************************************/
+     58          /*********************************************************************
+     59           * INCLUDES
+     60           */
+     61          #include  "hal_mcu.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb8
+   \   union <unnamed> volatile __sfr _A_IEN1
+   \                     _A_IEN1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xcb
+   \   unsigned char volatile __sfr T3CTL
+   \                     T3CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xcc
+   \   unsigned char volatile __sfr T3CCTL0
+   \                     T3CCTL0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xce
+   \   unsigned char volatile __sfr T3CCTL1
+   \                     T3CCTL1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xd8
+   \   union <unnamed> volatile __sfr _A_TIMIF
+   \                     _A_TIMIF:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe4
+   \   unsigned char volatile __sfr T1CTL
+   \                     T1CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe5
+   \   unsigned char volatile __sfr T1CCTL0
+   \                     T1CCTL0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe6
+   \   unsigned char volatile __sfr T1CCTL1
+   \                     T1CCTL1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe7
+   \   unsigned char volatile __sfr T1CCTL2
+   \                     T1CCTL2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xeb
+   \   unsigned char volatile __sfr T4CTL
+   \                     T4CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xec
+   \   unsigned char volatile __sfr T4CCTL0
+   \                     T4CCTL0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xee
+   \   unsigned char volatile __sfr T4CCTL1
+   \                     T4CCTL1:
+   \   000000                DS 1
+     62          #include  "hal_defs.h"
+     63          #include  "hal_types.h"
+     64          #include  "hal_timer.h"
+     65          #include  "hal_uart.h"
+     66          
+     67          /*********************************************************************
+     68           * MACROS
+     69           */
+     70          
+     71          /*********************************************************************
+     72           * CONSTANTS
+     73           */
+     74          #define HW_TIMER_1        0x00
+     75          #define HW_TIMER_3        0x01
+     76          #define HW_TIMER_4        0x02
+     77          #define HW_TIMER_INVALID  0x03
+     78          #define HW_TIMER_MAX      0x03
+     79          
+     80          #define IEN1_T1IE     0x02    /* Timer1 Interrupt Enable */
+     81          #define IEN1_T3IE     0x08    /* Timer3 Interrupt Enable */
+     82          #define IEN1_T4IE     0x10    /* Timer4 Interrupt Enable */
+     83          
+     84          #define T1CTL_CH2IF   0x80
+     85          #define T1CTL_CH1IF   0x40
+     86          #define T1CTL_CH0IF   0x20
+     87          #define T1CTL_OVFIF   0x10
+     88          
+     89          #define TIMIF_T1OVFIM 0x40
+     90          #define TIMIF_T4CH1IF 0x20
+     91          #define TIMIF_T4CH0IF 0x10
+     92          #define TIMIF_T4OVFIF 0x08
+     93          #define TIMIF_T3CH1IF 0x04
+     94          #define TIMIF_T3CH0IF 0x02
+     95          #define TIMIF_T3OVFIF 0x01
+     96          
+     97          #define T34CTL_OVFIM  0x80
+     98          
+     99          #define T134CCTL_IM         0x40    /* Interrupt Mask */
+    100          #define T134CCTL_CMP_BITS   0x38    /* Bits[5:3] == CMP[2:0] */
+    101          #define T134CCTL_MODE       0x04    /* Capture(0)/Compare(1) mode */
+    102          #define T134CCTL_CAP_BITS   0x03    /* Bits[1:0] == CAP[1:0] */
+    103          
+    104          #define T134CCTL_CMP_OC     0x18    /* Set output on compare, clear at 0 */
+    105          #define T134CCTL_CAP_RE     0x01    /* Set input capture on rising edge */
+    106          
+    107          /* Timer clock pre-scaler definitions for 16bit timer1 */
+    108          #define HAL_TIMER1_16_TC_DIV1     0x00  /* No clock pre-scaling */
+    109          #define HAL_TIMER1_16_TC_DIV8     0x04  /* Clock pre-scaled by 8 */
+    110          #define HAL_TIMER1_16_TC_DIV32    0x08  /* Clock pre-scaled by 32 */
+    111          #define HAL_TIMER1_16_TC_DIV128   0x0c  /* Clock pre-scaled by 128 */
+    112          #define HAL_TIMER1_16_TC_BITS     0x0c  /* Bits 3:2 */
+    113          
+    114          /* Timer clock pre-scaler definitions for 8bit timer3 and timer4 */
+    115          #define HAL_TIMER34_8_TC_DIV1     0x00  /* No clock pre-scaling */
+    116          #define HAL_TIMER34_8_TC_DIV2     0x20  /* Clock pre-scaled by 2 */
+    117          #define HAL_TIMER34_8_TC_DIV4     0x40  /* Clock pre-scaled by 4 */
+    118          #define HAL_TIMER34_8_TC_DIV8     0x60  /* Clock pre-scaled by 8 */
+    119          #define HAL_TIMER34_8_TC_DIV16    0x80  /* Clock pre-scaled by 16 */
+    120          #define HAL_TIMER34_8_TC_DIV32    0xA0  /* Clock pre-scaled by 32 */
+    121          #define HAL_TIMER34_8_TC_DIV64    0xC0  /* Clock pre-scaled by 64 */
+    122          #define HAL_TIMER34_8_TC_DIV128   0xE0  /* Clock pre-scaled by 128 */
+    123          #define HAL_TIMER34_8_TC_BITS     0xE0  /* Bits 7:5 */
+    124          
+    125          /* Operation Mode definitions */
+    126          #define HAL_TIMER1_OPMODE_STOP      0x00  /* Free Running Mode, Count from 0 to Max */
+    127          #define HAL_TIMER1_OPMODE_FREERUN   0x01  /* Free Running Mode, Count from 0 to Max */
+    128          #define HAL_TIMER1_OPMODE_MODULO    0x02  /* Modulo Mode, Count from 0 to CompareValue */
+    129          #define HAL_TIMER1_OPMODE_BITS      0x03  /* Bits 1:0 */
+    130          
+    131          #define HAL_TIMER34_START           0x10  /* Timer3 and Timer4 have separate Start bit */
+    132          #define HAL_TIMER34_OPMODE_FREERUN  0x00  /* Free Running Mode, Count from 0 to Max */
+    133          #define HAL_TIMER34_OPMODE_MODULO   0x02  /* Modulo Mode, Count from 0 to CompareValue */
+    134          #define HAL_TIMER34_OPMODE_BITS     0x03  /* Bits 1:0 */
+    135          
+    136          #define HAL_TIMER_MODE_STOP         0x03
+    137          
+    138          /* Prescale settings */
+    139          #define HAL_TIMER1_16_PRESCALE      HAL_TIMER1_16_TC_DIV128
+    140          #define HAL_TIMER1_16_PRESCALE_VAL  128
+    141          
+    142          #define HAL_TIMER1_16_PRESCALE_8     HAL_TIMER1_16_TC_DIV8
+    143          #define HAL_TIMER1_16_PRESCALE_8_VAL  8
+    144          
+    145          #define HAL_TIMER3_8_PRESCALE       HAL_TIMER34_8_TC_DIV128
+    146          #define HAL_TIMER3_8_PRESCALE_VAL   128
+    147          #define HAL_TIMER4_8_PRESCALE       HAL_TIMER34_8_TC_DIV128
+    148          #define HAL_TIMER4_8_PRESCALE_VAL   128
+    149          
+    150          /* Clock settings */
+    151          #define HAL_TIMER_16MHZ           16
+    152          #define HAL_TIMER_32MHZ           32
+    153          
+    154          /* Default all timers to use channel 0 */
+    155          #define TCHN_T1CCTL   &(X_T1CCTL0)
+    156          #define TCHN_T1CCL    &(X_T1CC0L)
+    157          #define TCHN_T1CCH    &(X_T1CC0H)
+    158          #define TCNH_T1OVF    &(X_TIMIF)
+    159          #define TCHN_T1OVFBIT TIMIF_T1OVFIM
+    160          #define TCHN_T1INTBIT IEN1_T1IE
+    161          
+    162          #define TCHN_T3CCTL   &(X_T3CCTL0)
+    163          #define TCHN_T3CCL    &(X_T3CC0)
+    164          #define TCHN_T3CCH    &(X_T3CC0)
+    165          #define TCNH_T3OVF    &(X_T3CTL)
+    166          #define TCHN_T3OVFBIT T34CTL_OVFIM
+    167          #define TCHN_T3INTBIT IEN1_T3IE
+    168          
+    169          #define TCHN_T4CCTL   &(X_T4CCTL0)
+    170          #define TCHN_T4CCL    &(X_T4CC0)
+    171          #define TCHN_T4CCH    &(X_T4CC0)
+    172          #define TCNH_T4OVF    &(X_T4CTL)
+    173          #define TCHN_T4OVFBIT T34CTL_OVFIM
+    174          #define TCHN_T4INTBIT IEN1_T4IE
+    175          
+    176           #define SHIRSendPin P0_7
+    177          /*********************************************************************
+    178           * TYPEDEFS
+    179           */
+    180          typedef struct
+    181          {
+    182            bool configured;
+    183            bool intEnable;
+    184            uint8 opMode;
+    185            uint8 channel;
+    186            uint8 channelMode;
+    187            uint8 prescale;
+    188            uint8 prescaleVal;
+    189            uint8 clock;
+    190            halTimerCBack_t callBackFunc;
+    191          } halTimerSettings_t;
+    192          
+    193          typedef struct
+    194          {
+    195            uint8 volatile XDATA *TxCCTL;
+    196            uint8 volatile XDATA *TxCCH;
+    197            uint8 volatile XDATA *TxCCL;
+    198            uint8 volatile XDATA *TxOVF;
+    199            uint8 ovfbit;
+    200            uint8 intbit;
+    201          } halTimerChannel_t;
+    202          
+    203          /*********************************************************************
+    204           * GLOBAL VARIABLES
+    205           */
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    206          static halTimerSettings_t halTimerRecord[HW_TIMER_MAX];
+   \                     halTimerRecord:
+   \   000000                DS 30
+   \   00001E                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    207          static halTimerChannel_t  halTimerChannel[HW_TIMER_MAX];
+   \                     halTimerChannel:
+   \   000000                DS 30
+   \   00001E                REQUIRE __INIT_XDATA_Z
+    208          
+    209          /*********************************************************************
+    210           * FUNCTIONS - External
+    211           */
+    212          
+    213          /*********************************************************************
+    214           * FUNCTIONS - Local
+    215           */
+    216          uint8 halTimerSetCount (uint8 cc2430id, uint32 timePerTick);
+    217          uint8 halTimerSetPrescale (uint8 cc2430id, uint8 prescale);
+    218          uint8 halTimerSetOpMode (uint8 cc2430id, uint8 opMode);
+    219          uint8 halTimerSetChannelMode (uint8 cc2430id, uint8 channelMode);
+    220          void halTimerSendCallBack (uint8 timerId, uint8 channel, uint8 channelMode);
+    221          uint8 halTimerRemap (uint8 timerId);
+    222          void halProcessTimer1 (void);
+    223          void halProcessTimer3 (void);
+    224          void halProcessTimer4 (void);
+    225          
+    226          
+    227          /*********************************************************************
+    228           * FUNCTIONS - API
+    229           */
+    230          
+    231          /*********************************************************************
+    232           * @fn      HalTimerInit
+    233           *
+    234           * @brief   Initialize Timer Service
+    235           *
+    236           * @param   None
+    237           *
+    238           * @return  None
+    239           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    240          void HalTimerInit (void)
+   \                     HalTimerInit:
+    241          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    242            T1CCTL0 = 0;    /* Make sure interrupts are disabled */
+   \   000004   75E500       MOV     0xe5,#0x0
+    243            T1CCTL1 = 0;    /* Make sure interrupts are disabled */
+   \   000007   75E600       MOV     0xe6,#0x0
+    244            T1CCTL2 = 0;    /* Make sure interrupts are disabled */
+   \   00000A   75E700       MOV     0xe7,#0x0
+    245            T3CCTL0 = 0;    /* Make sure interrupts are disabled */
+   \   00000D   75CC00       MOV     0xcc,#0x0
+    246            T3CCTL1 = 0;    /* Make sure interrupts are disabled */
+   \   000010   75CE00       MOV     0xce,#0x0
+    247            T4CCTL0 = 0;    /* Make sure interrupts are disabled */
+   \   000013   75EC00       MOV     0xec,#0x0
+    248            T4CCTL1 = 0;    /* Make sure interrupts are disabled */
+   \   000016   75EE00       MOV     0xee,#0x0
+    249          
+    250            /* Setup prescale & clock for timer0 */
+    251            halTimerRecord[HW_TIMER_1].prescale    = 0x04;
+   \   000019   90....       MOV     DPTR,#halTimerRecord + 5
+   \   00001C   7404         MOV     A,#0x4
+   \   00001E   F0           MOVX    @DPTR,A
+    252            halTimerRecord[HW_TIMER_1].clock       = HAL_TIMER_32MHZ;
+   \   00001F   90....       MOV     DPTR,#halTimerRecord + 7
+   \   000022   7420         MOV     A,#0x20
+   \   000024   F0           MOVX    @DPTR,A
+    253            halTimerRecord[HW_TIMER_1].prescaleVal = 8;
+   \   000025   90....       MOV     DPTR,#halTimerRecord + 6
+   \   000028   7408         MOV     A,#0x8
+   \   00002A   F0           MOVX    @DPTR,A
+    254          
+    255            /* Setup prescale & clock for timer2 */
+    256            halTimerRecord[HW_TIMER_3].prescale    = HAL_TIMER3_8_PRESCALE;
+   \   00002B   90....       MOV     DPTR,#halTimerRecord + 15
+   \   00002E   74E0         MOV     A,#-0x20
+   \   000030   F0           MOVX    @DPTR,A
+    257            halTimerRecord[HW_TIMER_3].clock       = HAL_TIMER_32MHZ;
+   \   000031   90....       MOV     DPTR,#halTimerRecord + 17
+   \   000034   7420         MOV     A,#0x20
+   \   000036   F0           MOVX    @DPTR,A
+    258            halTimerRecord[HW_TIMER_3].prescaleVal = HAL_TIMER3_8_PRESCALE_VAL;
+   \   000037   90....       MOV     DPTR,#halTimerRecord + 16
+   \   00003A   7480         MOV     A,#-0x80
+   \   00003C   F0           MOVX    @DPTR,A
+    259          
+    260            /* Setup prescale & clock for timer3 */
+    261            halTimerRecord[HW_TIMER_4].prescale    = HAL_TIMER4_8_PRESCALE;
+   \   00003D   90....       MOV     DPTR,#halTimerRecord + 25
+   \   000040   74E0         MOV     A,#-0x20
+   \   000042   F0           MOVX    @DPTR,A
+    262            halTimerRecord[HW_TIMER_4].clock       = HAL_TIMER_32MHZ;
+   \   000043   90....       MOV     DPTR,#halTimerRecord + 27
+   \   000046   7420         MOV     A,#0x20
+   \   000048   F0           MOVX    @DPTR,A
+    263            halTimerRecord[HW_TIMER_4].prescaleVal = HAL_TIMER4_8_PRESCALE_VAL;
+   \   000049   90....       MOV     DPTR,#halTimerRecord + 26
+   \   00004C   7480         MOV     A,#-0x80
+   \   00004E   F0           MOVX    @DPTR,A
+    264          
+    265            /* Setup Timer1 Channel structure */
+    266            halTimerChannel[HW_TIMER_1].TxCCTL =  TCHN_T1CCTL;
+   \   00004F   90....       MOV     DPTR,#halTimerChannel
+   \   000052   74E5         MOV     A,#-0x1b
+   \   000054   12....       LCALL   ??Subroutine15_0 & 0xFFFF
+    267            halTimerChannel[HW_TIMER_1].TxCCL =   TCHN_T1CCL;
+   \                     ??CrossCallReturnLabel_18:
+   \   000057   90....       MOV     DPTR,#halTimerChannel + 4
+   \   00005A   74DA         MOV     A,#-0x26
+   \   00005C   12....       LCALL   ??Subroutine15_0 & 0xFFFF
+    268            halTimerChannel[HW_TIMER_1].TxCCH =   TCHN_T1CCH;
+   \                     ??CrossCallReturnLabel_19:
+   \   00005F   90....       MOV     DPTR,#halTimerChannel + 2
+   \   000062   74DB         MOV     A,#-0x25
+   \   000064   12....       LCALL   ??Subroutine15_0 & 0xFFFF
+    269            halTimerChannel[HW_TIMER_1].TxOVF =   TCNH_T1OVF;
+   \                     ??CrossCallReturnLabel_20:
+   \   000067   90....       MOV     DPTR,#halTimerChannel + 6
+   \   00006A   74D8         MOV     A,#-0x28
+   \   00006C   12....       LCALL   ??Subroutine15_0 & 0xFFFF
+    270            halTimerChannel[HW_TIMER_1].ovfbit =  TCHN_T1OVFBIT;
+   \                     ??CrossCallReturnLabel_21:
+   \   00006F   A3           INC     DPTR
+   \   000070   7440         MOV     A,#0x40
+   \   000072   F0           MOVX    @DPTR,A
+    271            halTimerChannel[HW_TIMER_1].intbit =  TCHN_T1INTBIT;
+   \   000073   A3           INC     DPTR
+   \   000074   7402         MOV     A,#0x2
+   \   000076   F0           MOVX    @DPTR,A
+    272          
+    273            /* Setup Timer3 Channel structure */
+    274            halTimerChannel[HW_TIMER_3].TxCCTL =  TCHN_T3CCTL;
+   \   000077   A3           INC     DPTR
+   \   000078   74CC         MOV     A,#-0x34
+   \   00007A   12....       LCALL   ??Subroutine15_0 & 0xFFFF
+    275            halTimerChannel[HW_TIMER_3].TxCCL =   TCHN_T3CCL;
+   \                     ??CrossCallReturnLabel_22:
+   \   00007D   90....       MOV     DPTR,#halTimerChannel + 14
+   \   000080   12....       LCALL   ?Subroutine6 & 0xFFFF
+    276            halTimerChannel[HW_TIMER_3].TxCCH =   TCHN_T3CCH;
+   \                     ??CrossCallReturnLabel_26:
+   \   000083   90....       MOV     DPTR,#halTimerChannel + 12
+   \   000086   12....       LCALL   ?Subroutine6 & 0xFFFF
+    277            halTimerChannel[HW_TIMER_3].TxOVF =   TCNH_T3OVF;
+   \                     ??CrossCallReturnLabel_27:
+   \   000089   90....       MOV     DPTR,#halTimerChannel + 16
+   \   00008C   74CB         MOV     A,#-0x35
+   \   00008E   12....       LCALL   ?Subroutine5 & 0xFFFF
+    278            halTimerChannel[HW_TIMER_3].ovfbit =  TCHN_T3OVFBIT;
+    279            halTimerChannel[HW_TIMER_3].intbit =  TCHN_T3INTBIT;
+   \                     ??CrossCallReturnLabel_0:
+   \   000091   7408         MOV     A,#0x8
+   \   000093   F0           MOVX    @DPTR,A
+    280          
+    281            /* Setup Timer4 Channel structure */
+    282            halTimerChannel[HW_TIMER_4].TxCCTL =  TCHN_T4CCTL;
+   \   000094   A3           INC     DPTR
+   \   000095   74EC         MOV     A,#-0x14
+   \   000097   12....       LCALL   ??Subroutine15_0 & 0xFFFF
+    283            halTimerChannel[HW_TIMER_4].TxCCL =   TCHN_T4CCL;
+   \                     ??CrossCallReturnLabel_23:
+   \   00009A   90....       MOV     DPTR,#halTimerChannel + 24
+   \   00009D   74ED         MOV     A,#-0x13
+   \   00009F   12....       LCALL   ??Subroutine15_0 & 0xFFFF
+    284            halTimerChannel[HW_TIMER_4].TxCCH =   TCHN_T4CCH;
+   \                     ??CrossCallReturnLabel_24:
+   \   0000A2   90....       MOV     DPTR,#halTimerChannel + 22
+   \   0000A5   74ED         MOV     A,#-0x13
+   \   0000A7   12....       LCALL   ??Subroutine15_0 & 0xFFFF
+    285            halTimerChannel[HW_TIMER_4].TxOVF =   TCNH_T4OVF;
+   \                     ??CrossCallReturnLabel_25:
+   \   0000AA   90....       MOV     DPTR,#halTimerChannel + 26
+   \   0000AD   74EB         MOV     A,#-0x15
+   \   0000AF   12....       LCALL   ?Subroutine5 & 0xFFFF
+    286            halTimerChannel[HW_TIMER_4].ovfbit =  TCHN_T4OVFBIT;
+    287            halTimerChannel[HW_TIMER_4].intbit =  TCHN_T4INTBIT;
+   \                     ??CrossCallReturnLabel_1:
+   \   0000B2   7410         MOV     A,#0x10
+   \   0000B4   F0           MOVX    @DPTR,A
+    288          }
+   \   0000B5   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   0000B8                REQUIRE T1CCTL0
+   \   0000B8                REQUIRE T1CCTL1
+   \   0000B8                REQUIRE T1CCTL2
+   \   0000B8                REQUIRE T3CCTL0
+   \   0000B8                REQUIRE T3CCTL1
+   \   0000B8                REQUIRE T4CCTL0
+   \   0000B8                REQUIRE T4CCTL1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   74CD         MOV     A,#-0x33
+   \   000002                REQUIRE ??Subroutine15_0
+   \   000002                ; // Fall through to label ??Subroutine15_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine15_0:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   A3           INC     DPTR
+   \   000002   7470         MOV     A,#0x70
+   \   000004   F0           MOVX    @DPTR,A
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   A3           INC     DPTR
+   \   000002   7470         MOV     A,#0x70
+   \   000004   F0           MOVX    @DPTR,A
+   \   000005   A3           INC     DPTR
+   \   000006   7480         MOV     A,#-0x80
+   \   000008   F0           MOVX    @DPTR,A
+   \   000009   A3           INC     DPTR
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+    289          
+    290          /***************************************************************************************************
+    291           * @fn      HalTimerConfig
+    292           *
+    293           * @brief   Configure the Timer Serivce
+    294           *
+    295           * @param   timerId - Id of the timer
+    296           *          opMode  - Operation mode
+    297           *          channel - Channel where the counter operates on
+    298           *          channelMode - Mode of that channel
+    299           *          prescale - Prescale of the clock
+    300           *          cBack - Pointer to the callback function
+    301           *
+    302           * @return  Status of the configuration
+    303           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    304          uint8 HalTimerConfig (uint8 timerId, uint8 opMode, uint8 channel, uint8 channelMode,
+   \                     HalTimerConfig:
+    305                                bool intEnable, halTimerCBack_t cBack)
+    306          {
+   \   000000   74F3         MOV     A,#-0xd
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 13
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+   \   000007   8A..         MOV     ?V0 + 1,R2
+   \   000009   8B..         MOV     ?V0 + 2,R3
+   \   00000B   8C..         MOV     ?V0 + 3,R4
+   \   00000D   8D..         MOV     ?V0 + 4,R5
+   \   00000F   740D         MOV     A,#0xd
+   \   000011   12....       LCALL   ?XSTACK_DISP0_8
+   \   000014   E0           MOVX    A,@DPTR
+   \   000015   FE           MOV     R6,A
+   \   000016   A3           INC     DPTR
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   FF           MOV     R7,A
+    307            uint8 hwtimerid;
+    308          
+    309            hwtimerid = halTimerRemap (timerId);
+   \   000019                ; Setup parameters for call to function halTimerRemap
+   \   000019   12....       LCALL   ??halTimerRemap?relay
+   \   00001C   E9           MOV     A,R1
+   \   00001D   F8           MOV     R0,A
+    310          
+    311            if ((opMode & HAL_TIMER_MODE_MASK) && (timerId < HAL_TIMER_MAX) &&
+    312                (channelMode & HAL_TIMER_CHANNEL_MASK) && (channel & HAL_TIMER_CHANNEL_MASK))
+   \   00001E   7403         MOV     A,#0x3
+   \   000020   55..         ANL     A,?V0 + 1
+   \   000022   605E         JZ      ??HalTimerConfig_0
+   \   000024   E5..         MOV     A,?V0 + 0
+   \   000026   C3           CLR     C
+   \   000027   9404         SUBB    A,#0x4
+   \   000029   5057         JNC     ??HalTimerConfig_0
+   \   00002B   740F         MOV     A,#0xf
+   \   00002D   55..         ANL     A,?V0 + 3
+   \   00002F   6051         JZ      ??HalTimerConfig_0
+   \   000031   740F         MOV     A,#0xf
+   \   000033   55..         ANL     A,?V0 + 2
+   \   000035   604B         JZ      ??HalTimerConfig_0
+    313            {
+    314              halTimerRecord[hwtimerid].configured    = TRUE;
+   \   000037   E8           MOV     A,R0
+   \   000038   75F00A       MOV     B,#0xa
+   \   00003B   A4           MUL     AB
+   \   00003C   F8           MOV     R0,A
+   \   00003D   A9F0         MOV     R1,B
+   \   00003F   74..         MOV     A,#halTimerRecord & 0xff
+   \   000041   28           ADD     A,R0
+   \   000042   F8           MOV     R0,A
+   \   000043   74..         MOV     A,#(halTimerRecord >> 8) & 0xff
+   \   000045   39           ADDC    A,R1
+   \   000046   F9           MOV     R1,A
+   \   000047   E8           MOV     A,R0
+   \   000048   FA           MOV     R2,A
+   \   000049   E9           MOV     A,R1
+   \   00004A   FB           MOV     R3,A
+   \   00004B   8A82         MOV     DPL,R2
+   \   00004D   8B83         MOV     DPH,R3
+   \   00004F   7401         MOV     A,#0x1
+   \   000051   F0           MOVX    @DPTR,A
+    315              halTimerRecord[hwtimerid].opMode        = opMode;
+   \   000052   A3           INC     DPTR
+   \   000053   A3           INC     DPTR
+   \   000054   E5..         MOV     A,?V0 + 1
+   \   000056   12....       LCALL   ?Subroutine12 & 0xFFFF
+    316              halTimerRecord[hwtimerid].channel       = channel;
+   \                     ??CrossCallReturnLabel_14:
+   \   000059   E5..         MOV     A,?V0 + 2
+   \   00005B   12....       LCALL   ?Subroutine7 & 0xFFFF
+    317              halTimerRecord[hwtimerid].channelMode   = channelMode;
+   \                     ??CrossCallReturnLabel_2:
+   \   00005E   E5..         MOV     A,?V0 + 3
+   \   000060   F0           MOVX    @DPTR,A
+    318              halTimerRecord[hwtimerid].intEnable     = intEnable;
+   \   000061   8A82         MOV     DPL,R2
+   \   000063   8B83         MOV     DPH,R3
+   \   000065   A3           INC     DPTR
+   \   000066   E5..         MOV     A,?V0 + 4
+   \   000068   F0           MOVX    @DPTR,A
+    319              halTimerRecord[hwtimerid].callBackFunc  = cBack;
+   \   000069   EE           MOV     A,R6
+   \   00006A   F8           MOV     R0,A
+   \   00006B   EF           MOV     A,R7
+   \   00006C   F9           MOV     R1,A
+   \   00006D   8A82         MOV     DPL,R2
+   \   00006F   8B83         MOV     DPH,R3
+   \   000071   A3           INC     DPTR
+   \   000072   A3           INC     DPTR
+   \   000073   A3           INC     DPTR
+   \   000074   A3           INC     DPTR
+   \   000075   A3           INC     DPTR
+   \   000076   A3           INC     DPTR
+   \   000077   A3           INC     DPTR
+   \   000078   A3           INC     DPTR
+   \   000079   E8           MOV     A,R0
+   \   00007A   F0           MOVX    @DPTR,A
+   \   00007B   A3           INC     DPTR
+   \   00007C   E9           MOV     A,R1
+   \   00007D   F0           MOVX    @DPTR,A
+    320            }
+    321            else
+    322            {
+    323              return HAL_TIMER_PARAMS_ERROR;
+    324            }
+    325            return HAL_TIMER_OK;
+   \   00007E   7900         MOV     R1,#0x0
+   \   000080   8002         SJMP    ??HalTimerConfig_1
+   \                     ??HalTimerConfig_0:
+   \   000082   7902         MOV     R1,#0x2
+   \                     ??HalTimerConfig_1:
+   \   000084   7F05         MOV     R7,#0x5
+   \   000086   02....       LJMP    ?BANKED_LEAVE_XDATA
+    326          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   12....       LCALL   ?Subroutine12 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   000003   A3           INC     DPTR
+   \   000004   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine12:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001   8A82         MOV     DPL,R2
+   \   000003   8B83         MOV     DPH,R3
+   \   000005   A3           INC     DPTR
+   \   000006   A3           INC     DPTR
+   \   000007   A3           INC     DPTR
+   \   000008   22           RET
+    327          
+    328          
+    329          /***************************************************************************************************
+    330           * @fn      HalTimerStart
+    331           *
+    332           * @brief   Start the Timer Service
+    333           *
+    334           * @param   timerId      - ID of the timer
+    335           *          timerPerTick - number of micro sec per tick, (ticks x prescale) / clock = usec/tick
+    336           *
+    337           * @return  Status - OK or Not OK
+    338           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    339          uint8 HalTimerStart (uint8 timerId, uint32 timePerTick)
+   \                     HalTimerStart:
+    340          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 4,R2
+   \   000007   8B..         MOV     ?V0 + 5,R3
+   \   000009   8C..         MOV     ?V0 + 6,R4
+   \   00000B   8D..         MOV     ?V0 + 7,R5
+    341            uint8 hwtimerid;
+    342          
+    343            hwtimerid = halTimerRemap (timerId);
+   \   00000D                ; Setup parameters for call to function halTimerRemap
+   \   00000D   12....       LCALL   ??halTimerRemap?relay
+   \   000010   E9           MOV     A,R1
+   \   000011   F5..         MOV     ?V0 + 0,A
+    344          
+    345            if (halTimerRecord[hwtimerid].configured)
+   \   000013   75F00A       MOV     B,#0xa
+   \   000016   A4           MUL     AB
+   \   000017   F8           MOV     R0,A
+   \   000018   A9F0         MOV     R1,B
+   \   00001A   74..         MOV     A,#halTimerRecord & 0xff
+   \   00001C   28           ADD     A,R0
+   \   00001D   F8           MOV     R0,A
+   \   00001E   74..         MOV     A,#(halTimerRecord >> 8) & 0xff
+   \   000020   39           ADDC    A,R1
+   \   000021   F9           MOV     R1,A
+   \   000022   E8           MOV     A,R0
+   \   000023   FE           MOV     R6,A
+   \   000024   E9           MOV     A,R1
+   \   000025   FF           MOV     R7,A
+   \   000026   8E82         MOV     DPL,R6
+   \   000028   8F83         MOV     DPH,R7
+   \   00002A   E0           MOVX    A,@DPTR
+   \   00002B   606D         JZ      ??HalTimerStart_0
+    346            {
+    347              halTimerSetCount (hwtimerid, timePerTick);
+   \   00002D                ; Setup parameters for call to function halTimerSetCount
+   \   00002D   AA..         MOV     R2,?V0 + 4
+   \   00002F   AB..         MOV     R3,?V0 + 5
+   \   000031   AC..         MOV     R4,?V0 + 6
+   \   000033   AD..         MOV     R5,?V0 + 7
+   \   000035   A9..         MOV     R1,?V0 + 0
+   \   000037   12....       LCALL   ??halTimerSetCount?relay
+    348              halTimerSetPrescale (hwtimerid, halTimerRecord[hwtimerid].prescale);
+   \   00003A                ; Setup parameters for call to function halTimerSetPrescale
+   \   00003A   8E82         MOV     DPL,R6
+   \   00003C   8F83         MOV     DPH,R7
+   \   00003E   A3           INC     DPTR
+   \   00003F   A3           INC     DPTR
+   \   000040   A3           INC     DPTR
+   \   000041   A3           INC     DPTR
+   \   000042   A3           INC     DPTR
+   \   000043   E0           MOVX    A,@DPTR
+   \   000044   FA           MOV     R2,A
+   \   000045   A9..         MOV     R1,?V0 + 0
+   \   000047   12....       LCALL   ??halTimerSetPrescale?relay
+    349              halTimerSetOpMode (hwtimerid, halTimerRecord[hwtimerid].opMode);
+   \   00004A                ; Setup parameters for call to function halTimerSetOpMode
+   \   00004A   8E82         MOV     DPL,R6
+   \   00004C   8F83         MOV     DPH,R7
+   \   00004E   A3           INC     DPTR
+   \   00004F   A3           INC     DPTR
+   \   000050   E0           MOVX    A,@DPTR
+   \   000051   FA           MOV     R2,A
+   \   000052   A9..         MOV     R1,?V0 + 0
+   \   000054   12....       LCALL   ??halTimerSetOpMode?relay
+    350              halTimerSetChannelMode (hwtimerid, halTimerRecord[hwtimerid].channelMode);
+   \   000057   EE           MOV     A,R6
+   \   000058   2404         ADD     A,#0x4
+   \   00005A   F8           MOV     R0,A
+   \   00005B   EF           MOV     A,R7
+   \   00005C   3400         ADDC    A,#0x0
+   \   00005E   F9           MOV     R1,A
+   \   00005F   88..         MOV     ?V0 + 2,R0
+   \   000061   89..         MOV     ?V0 + 3,R1
+   \   000063                ; Setup parameters for call to function halTimerSetChannelMode
+   \   000063   8882         MOV     DPL,R0
+   \   000065   F583         MOV     DPH,A
+   \   000067   E0           MOVX    A,@DPTR
+   \   000068   FA           MOV     R2,A
+   \   000069   A9..         MOV     R1,?V0 + 0
+   \   00006B   12....       LCALL   ??halTimerSetChannelMode?relay
+    351          
+    352              if (hwtimerid == HW_TIMER_3)
+   \   00006E   7401         MOV     A,#0x1
+   \   000070   65..         XRL     A,?V0 + 0
+   \   000072   7005         JNZ     ??HalTimerStart_1
+    353              {
+    354                T3CTL |= HAL_TIMER34_START;
+   \   000074   43CB10       ORL     0xcb,#0x10
+   \   000077   8009         SJMP    ??HalTimerStart_2
+    355              }
+    356              if (hwtimerid == HW_TIMER_4)
+   \                     ??HalTimerStart_1:
+   \   000079   7402         MOV     A,#0x2
+   \   00007B   65..         XRL     A,?V0 + 0
+   \   00007D   7003         JNZ     ??HalTimerStart_2
+    357              {
+    358                T4CTL |= HAL_TIMER34_START;
+   \   00007F   43EB10       ORL     0xeb,#0x10
+    359              }
+    360              HalTimerInterruptEnable (hwtimerid, halTimerRecord[hwtimerid].channelMode,
+    361                                       halTimerRecord[hwtimerid].intEnable);
+   \                     ??HalTimerStart_2:
+   \   000082                ; Setup parameters for call to function HalTimerInterruptEnable
+   \   000082   8E82         MOV     DPL,R6
+   \   000084   8F83         MOV     DPH,R7
+   \   000086   A3           INC     DPTR
+   \   000087   E0           MOVX    A,@DPTR
+   \   000088   FB           MOV     R3,A
+   \   000089   85..82       MOV     DPL,?V0 + 2
+   \   00008C   85..83       MOV     DPH,?V0 + 3
+   \   00008F   E0           MOVX    A,@DPTR
+   \   000090   FA           MOV     R2,A
+   \   000091   A9..         MOV     R1,?V0 + 0
+   \   000093   12....       LCALL   ??HalTimerInterruptEnable?relay
+    362            }
+    363            else
+    364            {
+    365              return HAL_TIMER_NOT_CONFIGURED;
+    366            }
+    367            return HAL_TIMER_OK;
+   \   000096   7900         MOV     R1,#0x0
+   \   000098   8002         SJMP    ??HalTimerStart_3
+   \                     ??HalTimerStart_0:
+   \   00009A   7903         MOV     R1,#0x3
+   \                     ??HalTimerStart_3:
+   \   00009C                REQUIRE ?Subroutine1
+   \   00009C                REQUIRE T3CTL
+   \   00009C                REQUIRE T4CTL
+   \   00009C                ; // Fall through to label ?Subroutine1
+    368          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F08         MOV     R7,#0x8
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    369          
+    370          /***************************************************************************************************
+    371           * @fn      HalTimerTick
+    372           *
+    373           * @brief   Check the counter for expired counter.
+    374           *
+    375           * @param   None
+    376           *
+    377           * @return  None
+    378           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    379          void HalTimerTick (void)
+   \                     HalTimerTick:
+    380          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    381            if (!halTimerRecord[HW_TIMER_1].intEnable)
+   \   000004   90....       MOV     DPTR,#halTimerRecord + 1
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   7003         JNZ     ??HalTimerTick_0
+    382            {
+    383              halProcessTimer1 ();
+   \   00000A                ; Setup parameters for call to function halProcessTimer1
+   \   00000A   12....       LCALL   ??halProcessTimer1?relay
+    384            }
+    385          
+    386            if (!halTimerRecord[HW_TIMER_3].intEnable)
+   \                     ??HalTimerTick_0:
+   \   00000D   90....       MOV     DPTR,#halTimerRecord + 11
+   \   000010   E0           MOVX    A,@DPTR
+   \   000011   7003         JNZ     ??HalTimerTick_1
+    387            {
+    388              halProcessTimer3 ();
+   \   000013                ; Setup parameters for call to function halProcessTimer3
+   \   000013   12....       LCALL   ??halProcessTimer3?relay
+    389            }
+    390          
+    391            if (!halTimerRecord[HW_TIMER_4].intEnable)
+   \                     ??HalTimerTick_1:
+   \   000016   90....       MOV     DPTR,#halTimerRecord + 21
+   \   000019   E0           MOVX    A,@DPTR
+   \   00001A   7003         JNZ     ??HalTimerTick_2
+    392            {
+    393              halProcessTimer4 ();
+   \   00001C                ; Setup parameters for call to function halProcessTimer4
+   \   00001C   12....       LCALL   ??halProcessTimer4?relay
+    394            }
+    395          }
+   \                     ??HalTimerTick_2:
+   \   00001F   02....       LJMP    ?Subroutine0 & 0xFFFF
+    396          
+    397          /***************************************************************************************************
+    398           * @fn      HalTimerStop
+    399           *
+    400           * @brief   Stop the Timer Service
+    401           *
+    402           * @param   timerId - ID of the timer
+    403           *
+    404           * @return  Status - OK or Not OK
+    405           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    406          uint8 HalTimerStop (uint8 timerId)
+   \                     HalTimerStop:
+    407          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+    408            uint8 hwtimerid;
+    409          
+    410            hwtimerid = halTimerRemap (timerId);
+    411          
+    412            switch (hwtimerid)
+   \   000005                ; Setup parameters for call to function halTimerRemap
+   \   000005   12....       LCALL   ??halTimerRemap?relay
+   \   000008   E9           MOV     A,R1
+   \   000009   6008         JZ      ??HalTimerStop_0
+   \   00000B   14           DEC     A
+   \   00000C   6011         JZ      ??HalTimerStop_1
+   \   00000E   14           DEC     A
+   \   00000F   6013         JZ      ??HalTimerStop_2
+   \   000011   8016         SJMP    ??HalTimerStop_3
+    413            {
+    414              case HW_TIMER_1:
+    415                halTimerSetOpMode(HW_TIMER_1, HAL_TIMER_MODE_STOP);
+   \                     ??HalTimerStop_0:
+   \   000013                ; Setup parameters for call to function halTimerSetOpMode
+   \   000013   7A03         MOV     R2,#0x3
+   \   000015   7900         MOV     R1,#0x0
+   \   000017   12....       LCALL   ??halTimerSetOpMode?relay
+    416                break;
+    417              case HW_TIMER_3:
+    418                T3CTL &= ~(HAL_TIMER34_START);
+    419                break;
+    420              case HW_TIMER_4:
+    421                T4CTL &= ~(HAL_TIMER34_START);
+    422                break;
+    423              default:
+    424                return HAL_TIMER_INVALID_ID;
+    425            }
+    426            return HAL_TIMER_OK;
+   \                     ??HalTimerStop_4:
+   \   00001A   7900         MOV     R1,#0x0
+   \                     ??HalTimerStop_5:
+   \   00001C   02....       LJMP    ?Subroutine2 & 0xFFFF
+   \                     ??HalTimerStop_1:
+   \   00001F   53CBEF       ANL     0xcb,#0xef
+   \   000022   80F6         SJMP    ??HalTimerStop_4
+   \                     ??HalTimerStop_2:
+   \   000024   53EBEF       ANL     0xeb,#0xef
+   \   000027   80F1         SJMP    ??HalTimerStop_4
+   \                     ??HalTimerStop_3:
+   \   000029   7904         MOV     R1,#0x4
+   \   00002B   80EF         SJMP    ??HalTimerStop_5
+   \   00002D                REQUIRE T3CTL
+   \   00002D                REQUIRE T4CTL
+    427          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+    428          
+    429          /***************************************************************************************************
+    430           * @fn      halTimerSetCount
+    431           *
+    432           * @brief   Stop the Timer Service
+    433           *
+    434           * @param   hwtimerid - ID of the timer
+    435           *          timerPerTick - Number micro sec per ticks
+    436           *
+    437           * @return  Status - OK or Not OK
+    438           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    439          uint8 halTimerSetCount (uint8 hwtimerid, uint32 timePerTick)
+   \                     halTimerSetCount:
+    440          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   8A..         MOV     ?V0 + 0,R2
+   \   000008   8B..         MOV     ?V0 + 1,R3
+   \   00000A   8C..         MOV     ?V0 + 2,R4
+   \   00000C   8D..         MOV     ?V0 + 3,R5
+    441            uint16  count;
+    442            uint8   high, low;
+    443          
+    444            /* Load count = ((sec/tick) x clock) / prescale */
+    445            count = (uint16)((timePerTick * halTimerRecord[hwtimerid].clock) / halTimerRecord[hwtimerid].prescaleVal);
+   \   00000E   75F00A       MOV     B,#0xa
+   \   000011   A4           MUL     AB
+   \   000012   FA           MOV     R2,A
+   \   000013   ABF0         MOV     R3,B
+   \   000015   74..         MOV     A,#halTimerRecord & 0xff
+   \   000017   2A           ADD     A,R2
+   \   000018   F8           MOV     R0,A
+   \   000019   74..         MOV     A,#(halTimerRecord >> 8) & 0xff
+   \   00001B   3B           ADDC    A,R3
+   \   00001C   F9           MOV     R1,A
+   \   00001D   E8           MOV     A,R0
+   \   00001E   FC           MOV     R4,A
+   \   00001F   E9           MOV     A,R1
+   \   000020   FD           MOV     R5,A
+   \   000021   8C82         MOV     DPL,R4
+   \   000023   8D83         MOV     DPH,R5
+   \   000025   A3           INC     DPTR
+   \   000026   A3           INC     DPTR
+   \   000027   A3           INC     DPTR
+   \   000028   A3           INC     DPTR
+   \   000029   A3           INC     DPTR
+   \   00002A   A3           INC     DPTR
+   \   00002B   A3           INC     DPTR
+   \   00002C   E0           MOVX    A,@DPTR
+   \   00002D   F5..         MOV     ?V0 + 4,A
+   \   00002F   E4           CLR     A
+   \   000030   F5..         MOV     ?V0 + 5,A
+   \   000032   F5..         MOV     ?V0 + 6,A
+   \   000034   F5..         MOV     ?V0 + 7,A
+   \   000036   78..         MOV     R0,#?V0 + 0
+   \   000038   79..         MOV     R1,#?V0 + 4
+   \   00003A   12....       LCALL   ?L_MUL
+   \   00003D   8C82         MOV     DPL,R4
+   \   00003F   8D83         MOV     DPH,R5
+   \   000041   A3           INC     DPTR
+   \   000042   A3           INC     DPTR
+   \   000043   A3           INC     DPTR
+   \   000044   A3           INC     DPTR
+   \   000045   A3           INC     DPTR
+   \   000046   A3           INC     DPTR
+   \   000047   E0           MOVX    A,@DPTR
+   \   000048   F5..         MOV     ?V0 + 4,A
+   \   00004A   78..         MOV     R0,#?V0 + 0
+   \   00004C   79..         MOV     R1,#?V0 + 4
+   \   00004E   12....       LCALL   ?UL_DIV_MOD
+    446            high = (uint8) (count >> 8);
+    447            low = (uint8) count;
+    448          
+    449            *(halTimerChannel[hwtimerid].TxCCH) = high;
+   \   000051   74..         MOV     A,#halTimerChannel & 0xff
+   \   000053   2A           ADD     A,R2
+   \   000054   F8           MOV     R0,A
+   \   000055   74..         MOV     A,#(halTimerChannel >> 8) & 0xff
+   \   000057   3B           ADDC    A,R3
+   \   000058   F9           MOV     R1,A
+   \   000059   8882         MOV     DPL,R0
+   \   00005B   8983         MOV     DPH,R1
+   \   00005D   A3           INC     DPTR
+   \   00005E   A3           INC     DPTR
+   \   00005F   E0           MOVX    A,@DPTR
+   \   000060   FA           MOV     R2,A
+   \   000061   A3           INC     DPTR
+   \   000062   E0           MOVX    A,@DPTR
+   \   000063   F583         MOV     DPH,A
+   \   000065   8A82         MOV     DPL,R2
+   \   000067   E5..         MOV     A,?V0 + 1
+   \   000069   F0           MOVX    @DPTR,A
+    450            *(halTimerChannel[hwtimerid].TxCCL) = low;
+   \   00006A   8882         MOV     DPL,R0
+   \   00006C   8983         MOV     DPH,R1
+   \   00006E   A3           INC     DPTR
+   \   00006F   A3           INC     DPTR
+   \   000070   A3           INC     DPTR
+   \   000071   A3           INC     DPTR
+   \   000072   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_31:
+   \   000075   E5..         MOV     A,?V0 + 0
+   \   000077   F0           MOVX    @DPTR,A
+    451          
+    452            return HAL_TIMER_OK;
+   \   000078   7900         MOV     R1,#0x0
+   \   00007A   02....       LJMP    ?Subroutine1 & 0xFFFF
+    453          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine13:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F583         MOV     DPH,A
+   \   000006   8882         MOV     DPL,R0
+   \   000008   22           RET
+    454          
+    455          /***************************************************************************************************
+    456           * @fn      halTimerSetPrescale
+    457           *
+    458           * @brief   Stop the Timer Service
+    459           *
+    460           * @param   hwtimerid - ID of the timer
+    461           *          prescale - Prescale of the clock
+    462           *
+    463           * @return  Status - OK or Not OK
+    464           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    465          uint8 halTimerSetPrescale (uint8 hwtimerid, uint8 prescale)
+   \                     halTimerSetPrescale:
+    466          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   E9           MOV     A,R1
+    467            switch (hwtimerid)
+   \   000001   6008         JZ      ??halTimerSetPrescale_0
+   \   000003   14           DEC     A
+   \   000004   6010         JZ      ??halTimerSetPrescale_1
+   \   000006   14           DEC     A
+   \   000007   6015         JZ      ??halTimerSetPrescale_2
+   \   000009   801B         SJMP    ??halTimerSetPrescale_3
+    468            {
+    469              case HW_TIMER_1:
+    470                T1CTL &= ~(HAL_TIMER1_16_TC_BITS);
+   \                     ??halTimerSetPrescale_0:
+   \   00000B   53E4F3       ANL     0xe4,#0xf3
+    471                T1CTL |= prescale;
+   \   00000E   EA           MOV     A,R2
+   \   00000F   42E4         ORL     0xe4,A
+    472                break;
+    473              case HW_TIMER_3:
+    474                T3CTL &= ~(HAL_TIMER34_8_TC_BITS);
+    475                T3CTL |= prescale;
+    476                break;
+    477              case HW_TIMER_4:
+    478                T4CTL &= ~(HAL_TIMER34_8_TC_BITS);
+    479                T4CTL |= prescale;
+    480                break;
+    481              default:
+    482                return HAL_TIMER_INVALID_ID;
+    483            }
+    484            return HAL_TIMER_OK;
+   \                     ??halTimerSetPrescale_4:
+   \   000011   7900         MOV     R1,#0x0
+   \                     ??halTimerSetPrescale_5:
+   \   000013   02....       LJMP    ?BRET
+   \                     ??halTimerSetPrescale_1:
+   \   000016   53CB1F       ANL     0xcb,#0x1f
+   \   000019   EA           MOV     A,R2
+   \   00001A   42CB         ORL     0xcb,A
+   \   00001C   80F3         SJMP    ??halTimerSetPrescale_4
+   \                     ??halTimerSetPrescale_2:
+   \   00001E   53EB1F       ANL     0xeb,#0x1f
+   \   000021   EA           MOV     A,R2
+   \   000022   42EB         ORL     0xeb,A
+   \   000024   80EB         SJMP    ??halTimerSetPrescale_4
+   \                     ??halTimerSetPrescale_3:
+   \   000026   7904         MOV     R1,#0x4
+   \   000028   80E9         SJMP    ??halTimerSetPrescale_5
+   \   00002A                REQUIRE T1CTL
+   \   00002A                REQUIRE T3CTL
+   \   00002A                REQUIRE T4CTL
+    485          }
+    486          
+    487          /***************************************************************************************************
+    488           * @fn      halTimerSetOpMode
+    489           *
+    490           * @brief   Setup operate modes
+    491           *
+    492           * @param   hwtimerid - ID of the timer
+    493           *          opMode - operation mode of the timer
+    494           *
+    495           * @return  Status - OK or Not OK
+    496           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    497          uint8 halTimerSetOpMode (uint8 hwtimerid, uint8 opMode)
+   \                     halTimerSetOpMode:
+    498          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   E9           MOV     A,R1
+   \   000001   F8           MOV     R0,A
+    499            /* Load Waveform Generation Mode */
+    500            switch (opMode)
+   \   000002   EA           MOV     A,R2
+   \   000003   14           DEC     A
+   \   000004   6008         JZ      ??halTimerSetOpMode_0
+   \   000006   14           DEC     A
+   \   000007   602F         JZ      ??halTimerSetOpMode_1
+   \   000009   14           DEC     A
+   \   00000A   604F         JZ      ??halTimerSetOpMode_2
+   \   00000C   8058         SJMP    ??halTimerSetOpMode_3
+    501            {
+    502              case HAL_TIMER_MODE_NORMAL:
+    503                switch (hwtimerid)
+   \                     ??halTimerSetOpMode_0:
+   \   00000E   E8           MOV     A,R0
+   \   00000F   6008         JZ      ??halTimerSetOpMode_4
+   \   000011   14           DEC     A
+   \   000012   6010         JZ      ??halTimerSetOpMode_5
+   \   000014   14           DEC     A
+   \   000015   6015         JZ      ??halTimerSetOpMode_6
+   \   000017   801B         SJMP    ??halTimerSetOpMode_7
+    504                {
+    505                  case HW_TIMER_1:
+    506                    T1CTL &= ~(HAL_TIMER1_OPMODE_BITS);
+   \                     ??halTimerSetOpMode_4:
+   \   000019   53E4FC       ANL     0xe4,#0xfc
+    507                    T1CTL |= HAL_TIMER1_OPMODE_FREERUN;
+   \   00001C   43E401       ORL     0xe4,#0x1
+    508                    break;
+    509                  case HW_TIMER_3:
+    510                    T3CTL &= ~(HAL_TIMER34_OPMODE_BITS);
+    511                    T3CTL |= HAL_TIMER34_OPMODE_FREERUN;
+    512                    break;
+    513                  case HW_TIMER_4:
+    514                    T4CTL &= ~(HAL_TIMER34_OPMODE_BITS);
+    515                    T4CTL |= HAL_TIMER34_OPMODE_FREERUN;
+    516                    break;
+    517                  default:
+    518                    return HAL_TIMER_INVALID_ID;
+    519                }
+    520                break;
+    521          
+    522              case HAL_TIMER_MODE_CTC:
+    523                switch (hwtimerid)
+    524                {
+    525                  case HW_TIMER_1:
+    526                    T1CTL &= ~(HAL_TIMER1_OPMODE_BITS);
+    527                    T1CTL |= HAL_TIMER1_OPMODE_MODULO;
+    528                    break;
+    529                  case HW_TIMER_3:
+    530                    T3CTL &= ~(HAL_TIMER34_OPMODE_BITS);
+    531                    T3CTL |= HAL_TIMER34_OPMODE_MODULO;
+    532                    break;
+    533                  case HW_TIMER_4:
+    534                    T4CTL &= ~(HAL_TIMER34_OPMODE_BITS);
+    535                    T4CTL |= HAL_TIMER34_OPMODE_MODULO;
+    536                    break;
+    537                  default:
+    538                    return HAL_TIMER_INVALID_ID;
+    539                }
+    540                break;
+    541          
+    542              case HAL_TIMER_MODE_STOP:
+    543                if (hwtimerid == HW_TIMER_1)
+    544                {
+    545                  T1CTL &= ~(HAL_TIMER1_OPMODE_BITS);
+    546                  T1CTL |= HAL_TIMER1_OPMODE_STOP;
+    547                }
+    548                break;
+    549          
+    550              default:
+    551                return HAL_TIMER_INVALID_OP_MODE;
+    552            }
+    553            return HAL_TIMER_OK;
+   \                     ??halTimerSetOpMode_8:
+   \   00001F   7900         MOV     R1,#0x0
+   \                     ??halTimerSetOpMode_9:
+   \   000021   02....       LJMP    ?BRET
+   \                     ??halTimerSetOpMode_5:
+   \   000024   53CBFC       ANL     0xcb,#0xfc
+   \   000027   85CBCB       MOV     0xcb,0xcb
+   \   00002A   80F3         SJMP    ??halTimerSetOpMode_8
+   \                     ??halTimerSetOpMode_6:
+   \   00002C   53EBFC       ANL     0xeb,#0xfc
+   \   00002F   85EBEB       MOV     0xeb,0xeb
+   \   000032   80EB         SJMP    ??halTimerSetOpMode_8
+   \                     ??halTimerSetOpMode_7:
+   \   000034   7904         MOV     R1,#0x4
+   \   000036   80E9         SJMP    ??halTimerSetOpMode_9
+   \                     ??halTimerSetOpMode_1:
+   \   000038   E8           MOV     A,R0
+   \   000039   6008         JZ      ??halTimerSetOpMode_10
+   \   00003B   14           DEC     A
+   \   00003C   600D         JZ      ??halTimerSetOpMode_11
+   \   00003E   14           DEC     A
+   \   00003F   6012         JZ      ??halTimerSetOpMode_12
+   \   000041   80F1         SJMP    ??halTimerSetOpMode_7
+   \                     ??halTimerSetOpMode_10:
+   \   000043   53E4FC       ANL     0xe4,#0xfc
+   \   000046   43E402       ORL     0xe4,#0x2
+   \   000049   80D4         SJMP    ??halTimerSetOpMode_8
+   \                     ??halTimerSetOpMode_11:
+   \   00004B   53CBFC       ANL     0xcb,#0xfc
+   \   00004E   43CB02       ORL     0xcb,#0x2
+   \   000051   80CC         SJMP    ??halTimerSetOpMode_8
+   \                     ??halTimerSetOpMode_12:
+   \   000053   53EBFC       ANL     0xeb,#0xfc
+   \   000056   43EB02       ORL     0xeb,#0x2
+   \   000059   80C4         SJMP    ??halTimerSetOpMode_8
+   \                     ??halTimerSetOpMode_2:
+   \   00005B   E8           MOV     A,R0
+   \   00005C   70C1         JNZ     ??halTimerSetOpMode_8
+   \   00005E   53E4FC       ANL     0xe4,#0xfc
+   \   000061   85E4E4       MOV     0xe4,0xe4
+   \   000064   80B9         SJMP    ??halTimerSetOpMode_8
+   \                     ??halTimerSetOpMode_3:
+   \   000066   7906         MOV     R1,#0x6
+   \   000068   80B7         SJMP    ??halTimerSetOpMode_9
+   \   00006A                REQUIRE T1CTL
+   \   00006A                REQUIRE T3CTL
+   \   00006A                REQUIRE T4CTL
+    554          }
+    555          
+    556          /***************************************************************************************************
+    557           * @fn      halTimerSetChannelMode
+    558           *
+    559           * @brief   Setup channel modes.  Currently, only output compare mode is supported.  Input capture
+    560           *          mode is NOT supported.  Additionally, mapping timer channel inputs/outputs to I/O pins
+    561           *          is NOT supported.
+    562           *
+    563           * @param   hwtimerid - ID of the timer
+    564           *          channelMode - channel mode of the timer
+    565           *
+    566           * @return  Status - OK or Not OK
+    567           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    568          uint8 halTimerSetChannelMode (uint8 hwtimerid, uint8 channelMode)
+   \                     halTimerSetChannelMode:
+    569          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   E9           MOV     A,R1
+   \   000005   FC           MOV     R4,A
+    570            switch (channelMode)
+   \   000006   EA           MOV     A,R2
+   \   000007   14           DEC     A
+   \   000008   6029         JZ      ??halTimerSetChannelMode_0
+   \   00000A   14           DEC     A
+   \   00000B   702B         JNZ     ??halTimerSetChannelMode_1
+    571            {
+    572              case HAL_TIMER_CH_MODE_OUTPUT_COMPARE:
+    573                *(halTimerChannel[hwtimerid].TxCCTL) &= ~(T134CCTL_CMP_BITS);
+   \   00000D   EC           MOV     A,R4
+   \   00000E   75F00A       MOV     B,#0xa
+   \   000011   A4           MUL     AB
+   \   000012   F8           MOV     R0,A
+   \   000013   A9F0         MOV     R1,B
+   \   000015   74..         MOV     A,#halTimerChannel & 0xff
+   \   000017   28           ADD     A,R0
+   \   000018   F8           MOV     R0,A
+   \   000019   74..         MOV     A,#(halTimerChannel >> 8) & 0xff
+   \   00001B   39           ADDC    A,R1
+   \   00001C   F9           MOV     R1,A
+   \   00001D   8882         MOV     DPL,R0
+   \   00001F   8983         MOV     DPH,R1
+   \   000021   E0           MOVX    A,@DPTR
+   \   000022   FB           MOV     R3,A
+   \   000023   A3           INC     DPTR
+   \   000024   E0           MOVX    A,@DPTR
+   \   000025   F583         MOV     DPH,A
+   \   000027   8B82         MOV     DPL,R3
+   \   000029   E0           MOVX    A,@DPTR
+   \   00002A   54C7         ANL     A,#0xc7
+   \   00002C   F0           MOVX    @DPTR,A
+    574                *(halTimerChannel[hwtimerid].TxCCTL) |= (T134CCTL_CMP_OC | T134CCTL_MODE);
+   \   00002D   12....       LCALL   ??Subroutine16_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_28:
+   \   000030   441C         ORL     A,#0x1c
+   \   000032   F0           MOVX    @DPTR,A
+    575                break;
+    576          
+    577              case HAL_TIMER_CH_MODE_INPUT_CAPTURE:       /* Not Supported */
+    578          /*
+    579                *(halTimerChannel[hwtimerid].TxCCTL) &= ~(T134CCTL_CAP_BITS | T134CCTL_MODE);
+    580                *(halTimerChannel[hwtimerid].TxCCTL) |= T134CCTL_CAP_RE;
+    581          */
+    582                break;
+    583          
+    584              default:
+    585                return HAL_TIMER_INVALID_CH_MODE;
+    586            }
+    587            return HAL_TIMER_OK;
+   \                     ??halTimerSetChannelMode_0:
+   \   000033   7900         MOV     R1,#0x0
+   \                     ??halTimerSetChannelMode_2:
+   \   000035   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \                     ??halTimerSetChannelMode_1:
+   \   000038   7905         MOV     R1,#0x5
+   \   00003A   80F9         SJMP    ??halTimerSetChannelMode_2
+    588          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine16_0:
+   \   000000   8882         MOV     DPL,R0
+   \   000002   8983         MOV     DPH,R1
+   \   000004   12....       LCALL   ?Subroutine13 & 0xFFFF
+   \                     ??CrossCallReturnLabel_32:
+   \   000007   E0           MOVX    A,@DPTR
+   \   000008   22           RET
+    589          
+    590          /***************************************************************************************************
+    591           * @fn      HalTimerInterruptEnable
+    592           *
+    593           * @brief   Setup operate modes
+    594           *
+    595           * @param   hwtimerid - ID of the timer
+    596           *          channelMode - channel mode
+    597           *          enable - TRUE or FALSE
+    598           *
+    599           * @return  Status - OK or Not OK
+    600           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    601          uint8 HalTimerInterruptEnable (uint8 hwtimerid, uint8 channelMode, bool enable)
+   \                     HalTimerInterruptEnable:
+    602          {
+   \   000000   74F5         MOV     A,#-0xb
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 11
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+    603            switch (channelMode)
+   \   000009   E9           MOV     A,R1
+   \   00000A   75F00A       MOV     B,#0xa
+   \   00000D   A4           MUL     AB
+   \   00000E   FC           MOV     R4,A
+   \   00000F   ADF0         MOV     R5,B
+   \   000011   74..         MOV     A,#halTimerChannel & 0xff
+   \   000013   2C           ADD     A,R4
+   \   000014   FA           MOV     R2,A
+   \   000015   74..         MOV     A,#(halTimerChannel >> 8) & 0xff
+   \   000017   3D           ADDC    A,R5
+   \   000018   FB           MOV     R3,A
+   \   000019   EE           MOV     A,R6
+   \   00001A   14           DEC     A
+   \   00001B   6047         JZ      ??HalTimerInterruptEnable_0
+   \   00001D   14           DEC     A
+   \   00001E   6044         JZ      ??HalTimerInterruptEnable_0
+   \   000020   24FE         ADD     A,#-0x2
+   \   000022   7054         JNZ     ??HalTimerInterruptEnable_1
+    604            {
+    605              case HAL_TIMER_CH_MODE_OVERFLOW:
+    606          
+    607                if (enable)
+   \   000024   EA           MOV     A,R2
+   \   000025   2408         ADD     A,#0x8
+   \   000027   F582         MOV     DPL,A
+   \   000029   EB           MOV     A,R3
+   \   00002A   3400         ADDC    A,#0x0
+   \   00002C   F583         MOV     DPH,A
+   \   00002E   EA           MOV     A,R2
+   \   00002F   2406         ADD     A,#0x6
+   \   000031   F8           MOV     R0,A
+   \   000032   EB           MOV     A,R3
+   \   000033   3400         ADDC    A,#0x0
+   \   000035   F9           MOV     R1,A
+   \   000036   EF           MOV     A,R7
+   \   000037   6022         JZ      ??HalTimerInterruptEnable_2
+    608                {
+    609                  *(halTimerChannel[hwtimerid].TxOVF) |= halTimerChannel[hwtimerid].ovfbit;
+   \   000039   E0           MOVX    A,@DPTR
+   \   00003A   12....       LCALL   ?Subroutine4 & 0xFFFF
+    610                }
+   \                     ??CrossCallReturnLabel_29:
+   \   00003D   45..         ORL     A,?V0 + 1
+   \                     ??HalTimerInterruptEnable_3:
+   \   00003F   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000042   A3           INC     DPTR
+   \   000043   A3           INC     DPTR
+   \   000044   A3           INC     DPTR
+   \   000045   A3           INC     DPTR
+   \   000046   A3           INC     DPTR
+   \   000047   E0           MOVX    A,@DPTR
+   \   000048   F8           MOV     R0,A
+   \   000049   74..         MOV     A,#(halTimerRecord + 1) & 0xff
+   \   00004B   2C           ADD     A,R4
+   \   00004C   F582         MOV     DPL,A
+   \   00004E   74..         MOV     A,#((halTimerRecord + 1) >> 8) & 0xff
+   \   000050   3D           ADDC    A,R5
+   \   000051   F583         MOV     DPH,A
+   \   000053   E0           MOVX    A,@DPTR
+   \   000054   6026         JZ      ??HalTimerInterruptEnable_4
+    611                else
+    612                {
+    613                  *(halTimerChannel[hwtimerid].TxOVF) &= ((halTimerChannel[hwtimerid].ovfbit) ^ 0xFF);
+    614                }
+    615                break;
+    616          
+    617              case HAL_TIMER_CH_MODE_OUTPUT_COMPARE:
+    618              case HAL_TIMER_CH_MODE_INPUT_CAPTURE:
+    619          
+    620                if (enable)
+    621                {
+    622                  *(halTimerChannel[hwtimerid].TxCCTL) |= T134CCTL_IM;
+    623                }
+    624                else
+    625                {
+    626                  *(halTimerChannel[hwtimerid].TxCCTL) &= ~(T134CCTL_IM);
+    627                }
+    628                break;
+    629          
+    630              default:
+    631                return HAL_TIMER_INVALID_CH_MODE;
+    632            }
+    633          
+    634            if (halTimerRecord[hwtimerid].intEnable)
+    635            {
+    636              IEN1 |= halTimerChannel[hwtimerid].intbit;
+   \   000056   E8           MOV     A,R0
+   \   000057   42B8         ORL     0xb8,A
+   \   000059   8026         SJMP    ??HalTimerInterruptEnable_5
+    637            }
+   \                     ??HalTimerInterruptEnable_2:
+   \   00005B   E0           MOVX    A,@DPTR
+   \   00005C   F4           CPL     A
+   \   00005D   12....       LCALL   ?Subroutine4 & 0xFFFF
+   \                     ??CrossCallReturnLabel_30:
+   \   000060   55..         ANL     A,?V0 + 1
+   \   000062   80DB         SJMP    ??HalTimerInterruptEnable_3
+   \                     ??HalTimerInterruptEnable_0:
+   \   000064   8A82         MOV     DPL,R2
+   \   000066   8B83         MOV     DPH,R3
+   \   000068   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   00006B   EF           MOV     A,R7
+   \   00006C   6005         JZ      ??HalTimerInterruptEnable_6
+   \   00006E   E0           MOVX    A,@DPTR
+   \   00006F   D2E6         SETB    0xE0 /* A   */.6
+   \   000071   80CC         SJMP    ??HalTimerInterruptEnable_3
+   \                     ??HalTimerInterruptEnable_6:
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   C2E6         CLR     0xE0 /* A   */.6
+   \   000076   80C7         SJMP    ??HalTimerInterruptEnable_3
+   \                     ??HalTimerInterruptEnable_1:
+   \   000078   7905         MOV     R1,#0x5
+   \   00007A   8007         SJMP    ??HalTimerInterruptEnable_7
+    638            else
+    639            {
+    640              IEN1 &= ((halTimerChannel[hwtimerid].intbit) ^ 0xFF);
+   \                     ??HalTimerInterruptEnable_4:
+   \   00007C   74FF         MOV     A,#-0x1
+   \   00007E   68           XRL     A,R0
+   \   00007F   52B8         ANL     0xb8,A
+    641            }
+    642            return HAL_TIMER_OK;
+   \                     ??HalTimerInterruptEnable_5:
+   \   000081   7900         MOV     R1,#0x0
+   \                     ??HalTimerInterruptEnable_7:
+   \   000083   7F03         MOV     R7,#0x3
+   \   000085   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   000088                REQUIRE _A_IEN1
+    643          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   F5..         MOV     ?V0 + 1,A
+   \   000002                REQUIRE ??Subroutine16_0
+   \   000002                ; // Fall through to label ??Subroutine16_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   E0           MOVX    A,@DPTR
+   \   000001   F8           MOV     R0,A
+   \   000002   A3           INC     DPTR
+   \   000003   E0           MOVX    A,@DPTR
+   \   000004   F9           MOV     R1,A
+   \   000005   8882         MOV     DPL,R0
+   \   000007   8983         MOV     DPH,R1
+   \   000009   22           RET
+    644          
+    645          /***************************************************************************************************
+    646           * @fn      halTimerSendCallBack
+    647           *
+    648           * @brief   Send Callback back to the caller
+    649           *
+    650           * @param   timerId - ID of the timer
+    651           *          channel - channel where the interrupt occurs
+    652           *          channelMode - channel mode
+    653           *
+    654           *
+    655           * @return  None
+    656           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    657          void halTimerSendCallBack (uint8 timerId, uint8 channel, uint8 channelMode)
+   \                     halTimerSendCallBack:
+    658          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   8A..         MOV     ?V0 + 0,R2
+   \   000009   EB           MOV     A,R3
+   \   00000A   FF           MOV     R7,A
+    659            uint8 hwtimerid;
+    660          
+    661            hwtimerid = halTimerRemap (timerId);
+   \   00000B                ; Setup parameters for call to function halTimerRemap
+   \   00000B   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   00000E   74..         MOV     A,#(halTimerRecord + 8) & 0xff
+   \   000010   28           ADD     A,R0
+   \   000011   F582         MOV     DPL,A
+   \   000013   74..         MOV     A,#((halTimerRecord + 8) >> 8) & 0xff
+   \   000015   39           ADDC    A,R1
+   \   000016   F583         MOV     DPH,A
+   \   000018   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   00001B   E582         MOV     A,DPL
+   \   00001D   4583         ORL     A,DPH
+   \   00001F   6009         JZ      ??halTimerSendCallBack_0
+    662          
+    663            if (halTimerRecord[hwtimerid].callBackFunc)
+    664              (halTimerRecord[hwtimerid].callBackFunc) (timerId, channel, channelMode);
+   \   000021                ; Setup parameters for indirect call
+   \   000021   EF           MOV     A,R7
+   \   000022   FB           MOV     R3,A
+   \   000023   AA..         MOV     R2,?V0 + 0
+   \   000025   EE           MOV     A,R6
+   \   000026   F9           MOV     R1,A
+   \   000027   12....       LCALL   ?CALL_IND
+    665          }
+   \                     ??halTimerSendCallBack_0:
+   \   00002A                REQUIRE ?Subroutine2
+   \   00002A                ; // Fall through to label ?Subroutine2
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine14:
+   \   000000   12....       LCALL   ??halTimerRemap?relay
+   \   000003   E9           MOV     A,R1
+   \   000004   75F00A       MOV     B,#0xa
+   \   000007   A4           MUL     AB
+   \   000008   F8           MOV     R0,A
+   \   000009   A9F0         MOV     R1,B
+   \   00000B   22           RET
+    666          
+    667          /***************************************************************************************************
+    668           * @fn      halTimerRemap
+    669           *
+    670           * @brief   Maps API HAL_TIMER_ID to HW Timer ID.
+    671           *          HAL_TIMER_0 --> HW Timer 3 8bit
+    672           *          HAL_TIMER_2 --> HW Timer 4 8bit
+    673           *          HAL_TIMER_3 --> HW Timer 1 16bit
+    674           *
+    675           * @param   timerId - ID of the timer
+    676           *
+    677           * @return  HW timer ID
+    678           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    679          uint8 halTimerRemap (uint8 timerId)
+   \                     halTimerRemap:
+    680          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+   \   000000   E9           MOV     A,R1
+    681            switch (timerId)
+   \   000001   6009         JZ      ??halTimerRemap_0
+   \   000003   24FE         ADD     A,#-0x2
+   \   000005   6009         JZ      ??halTimerRemap_1
+   \   000007   14           DEC     A
+   \   000008   600A         JZ      ??halTimerRemap_2
+   \   00000A   800C         SJMP    ??halTimerRemap_3
+    682            {
+    683              case HAL_TIMER_0:
+    684                return HW_TIMER_3;
+   \                     ??halTimerRemap_0:
+   \   00000C   7901         MOV     R1,#0x1
+   \   00000E   800A         SJMP    ??halTimerRemap_4
+    685              case HAL_TIMER_2:
+    686                return HW_TIMER_4;
+   \                     ??halTimerRemap_1:
+   \   000010   7902         MOV     R1,#0x2
+   \   000012   8006         SJMP    ??halTimerRemap_4
+    687              case HAL_TIMER_3:
+    688                return HW_TIMER_1;
+   \                     ??halTimerRemap_2:
+   \   000014   7900         MOV     R1,#0x0
+   \   000016   8002         SJMP    ??halTimerRemap_4
+    689              default:
+    690                return HW_TIMER_INVALID;
+   \                     ??halTimerRemap_3:
+   \   000018   7903         MOV     R1,#0x3
+   \                     ??halTimerRemap_4:
+   \   00001A   02....       LJMP    ?BRET
+    691            }
+    692          }
+    693          
+    694          /***************************************************************************************************
+    695           * @fn      halProcessTimer1
+    696           *
+    697           * @brief   Processes Timer 1 Events.
+    698           *
+    699           * @param
+    700           *
+    701           * @return
+    702           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    703          void halProcessTimer1 (void)
+   \                     halProcessTimer1:
+    704          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    705            if (halTimerRecord[halTimerRemap(HAL_TIMER_3)].channelMode == HAL_TIMER_CH_MODE_OUTPUT_COMPARE)
+   \   000004                ; Setup parameters for call to function halTimerRemap
+   \   000004   7903         MOV     R1,#0x3
+   \   000006   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   000009   7033         JNZ     ??halProcessTimer1_0
+    706            {
+    707              if (T1CTL & T1CTL_CH0IF)
+   \   00000B   E5E4         MOV     A,0xe4
+   \   00000D   A2E5         MOV     C,0xE0 /* A   */.5
+   \   00000F   500C         JNC     ??halProcessTimer1_1
+    708              {
+    709                T1CTL &= ~(T1CTL_CH0IF);
+   \   000011   53E4DF       ANL     0xe4,#0xdf
+    710                halTimerSendCallBack (HAL_TIMER_3, HAL_TIMER_CHANNEL_A, HAL_TIMER_CH_MODE_OUTPUT_COMPARE);
+   \   000014                ; Setup parameters for call to function halTimerSendCallBack
+   \   000014   7B02         MOV     R3,#0x2
+   \   000016   7A02         MOV     R2,#0x2
+   \   000018   7903         MOV     R1,#0x3
+   \   00001A   12....       LCALL   ??halTimerSendCallBack?relay
+    711              }
+    712              if (T1CTL & T1CTL_CH1IF)
+   \                     ??halProcessTimer1_1:
+   \   00001D   E5E4         MOV     A,0xe4
+   \   00001F   A2E6         MOV     C,0xE0 /* A   */.6
+   \   000021   500C         JNC     ??halProcessTimer1_2
+    713              {
+    714                T1CTL &= ~(T1CTL_CH1IF);
+   \   000023   53E4BF       ANL     0xe4,#0xbf
+    715                halTimerSendCallBack (HAL_TIMER_3, HAL_TIMER_CHANNEL_B, HAL_TIMER_CH_MODE_OUTPUT_COMPARE);
+   \   000026                ; Setup parameters for call to function halTimerSendCallBack
+   \   000026   7B02         MOV     R3,#0x2
+   \   000028   7A04         MOV     R2,#0x4
+   \   00002A   7903         MOV     R1,#0x3
+   \   00002C   12....       LCALL   ??halTimerSendCallBack?relay
+    716              }
+    717              if (T1CTL & T1CTL_CH2IF)
+   \                     ??halProcessTimer1_2:
+   \   00002F   E5E4         MOV     A,0xe4
+   \   000031   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000033   5022         JNC     ??halProcessTimer1_3
+    718              {
+    719                T1CTL &= ~(T1CTL_CH2IF);
+   \   000035   53E47F       ANL     0xe4,#0x7f
+    720                halTimerSendCallBack (HAL_TIMER_3, HAL_TIMER_CHANNEL_C, HAL_TIMER_CH_MODE_OUTPUT_COMPARE);
+   \   000038                ; Setup parameters for call to function halTimerSendCallBack
+   \   000038   7B02         MOV     R3,#0x2
+   \   00003A   7A08         MOV     R2,#0x8
+   \   00003C   8014         SJMP    ??halProcessTimer1_4
+    721              }
+    722            }
+    723            else if (halTimerRecord[halTimerRemap(HAL_TIMER_3)].channelMode == HAL_TIMER_CH_MODE_OVERFLOW)
+   \                     ??halProcessTimer1_0:
+   \   00003E                ; Setup parameters for call to function halTimerRemap
+   \   00003E   7903         MOV     R1,#0x3
+   \   000040   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   000043   7012         JNZ     ??halProcessTimer1_3
+    724            {
+    725              if (T1CTL & T1CTL_OVFIF)
+   \   000045   E5E4         MOV     A,0xe4
+   \   000047   A2E4         MOV     C,0xE0 /* A   */.4
+   \   000049   500C         JNC     ??halProcessTimer1_3
+    726              {
+    727                T1CTL &= ~(T1CTL_OVFIF);
+   \   00004B   53E4EF       ANL     0xe4,#0xef
+    728                halTimerSendCallBack (HAL_TIMER_3, HAL_TIMER_CHANNEL_SINGLE, HAL_TIMER_CH_MODE_OVERFLOW);
+   \   00004E                ; Setup parameters for call to function halTimerSendCallBack
+   \   00004E   7B04         MOV     R3,#0x4
+   \   000050   7A01         MOV     R2,#0x1
+   \                     ??halProcessTimer1_4:
+   \   000052   7903         MOV     R1,#0x3
+   \   000054   12....       LCALL   ??halTimerSendCallBack?relay
+    729              }
+    730            }
+    731          }
+   \                     ??halProcessTimer1_3:
+   \   000057                REQUIRE ?Subroutine0
+   \   000057                REQUIRE T1CTL
+   \   000057                ; // Fall through to label ?Subroutine0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine10:
+   \   000000   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   000003   6404         XRL     A,#0x4
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine9:
+   \   000000   12....       LCALL   ?Subroutine11 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000003   6402         XRL     A,#0x2
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine11:
+   \   000000   12....       LCALL   ?Subroutine14 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   000003   74..         MOV     A,#(halTimerRecord + 4) & 0xff
+   \   000005   28           ADD     A,R0
+   \   000006   F582         MOV     DPL,A
+   \   000008   74..         MOV     A,#((halTimerRecord + 4) >> 8) & 0xff
+   \   00000A   39           ADDC    A,R1
+   \   00000B   F583         MOV     DPH,A
+   \   00000D   E0           MOVX    A,@DPTR
+   \   00000E   22           RET
+    732          
+    733          /***************************************************************************************************
+    734           * @fn      halProcessTimer3
+    735           *
+    736           * @brief   Processes Timer 3 Events.
+    737           *
+    738           * @param
+    739           *
+    740           * @return
+    741           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    742          void halProcessTimer3 (void)
+   \                     halProcessTimer3:
+    743          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    744            if (halTimerRecord[halTimerRemap(HAL_TIMER_0)].channelMode == HAL_TIMER_CH_MODE_OUTPUT_COMPARE)
+   \   000004                ; Setup parameters for call to function halTimerRemap
+   \   000004   7900         MOV     R1,#0x0
+   \   000006   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   000009   701B         JNZ     ??halProcessTimer3_0
+    745            {
+    746              if (TIMIF & TIMIF_T3CH0IF)
+   \   00000B   A2D9         MOV     C,0xd8.1
+   \   00000D   500B         JNC     ??halProcessTimer3_1
+    747              {
+    748                TIMIF &= ~(TIMIF_T3CH0IF);
+   \   00000F   C2D9         CLR     0xd8.1
+    749                halTimerSendCallBack (HAL_TIMER_0, HAL_TIMER_CHANNEL_A, HAL_TIMER_CH_MODE_OUTPUT_COMPARE);
+   \   000011                ; Setup parameters for call to function halTimerSendCallBack
+   \   000011   7B02         MOV     R3,#0x2
+   \   000013   7A02         MOV     R2,#0x2
+   \   000015   7900         MOV     R1,#0x0
+   \   000017   12....       LCALL   ??halTimerSendCallBack?relay
+    750              }
+    751              if (TIMIF & TIMIF_T3CH1IF)
+   \                     ??halProcessTimer3_1:
+   \   00001A   A2DA         MOV     C,0xd8.2
+   \   00001C   501E         JNC     ??halProcessTimer3_2
+    752              {
+    753                TIMIF &= ~(TIMIF_T3CH1IF);
+   \   00001E   C2DA         CLR     0xd8.2
+    754                halTimerSendCallBack (HAL_TIMER_0, HAL_TIMER_CHANNEL_B, HAL_TIMER_CH_MODE_OUTPUT_COMPARE);
+   \   000020                ; Setup parameters for call to function halTimerSendCallBack
+   \   000020   7B02         MOV     R3,#0x2
+   \   000022   7A04         MOV     R2,#0x4
+   \   000024   8011         SJMP    ??halProcessTimer3_3
+    755              }
+    756            }
+    757            else if (halTimerRecord[halTimerRemap(HAL_TIMER_0)].channelMode == HAL_TIMER_CH_MODE_OVERFLOW)
+   \                     ??halProcessTimer3_0:
+   \   000026                ; Setup parameters for call to function halTimerRemap
+   \   000026   7900         MOV     R1,#0x0
+   \   000028   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   00002B   700F         JNZ     ??halProcessTimer3_2
+    758            {
+    759              if (TIMIF & TIMIF_T3OVFIF)
+   \   00002D   A2D8         MOV     C,0xd8.0
+   \   00002F   500B         JNC     ??halProcessTimer3_2
+    760              {
+    761                TIMIF &= ~(TIMIF_T3OVFIF);
+   \   000031   C2D8         CLR     0xd8.0
+    762                halTimerSendCallBack (HAL_TIMER_0, HAL_TIMER_CHANNEL_SINGLE, HAL_TIMER_CH_MODE_OVERFLOW);
+   \   000033                ; Setup parameters for call to function halTimerSendCallBack
+   \   000033   7B04         MOV     R3,#0x4
+   \   000035   7A01         MOV     R2,#0x1
+   \                     ??halProcessTimer3_3:
+   \   000037   7900         MOV     R1,#0x0
+   \   000039   12....       LCALL   ??halTimerSendCallBack?relay
+    763              }
+    764            }
+    765          }
+   \                     ??halProcessTimer3_2:
+   \   00003C   80..         SJMP    ?Subroutine0
+   \   00003E                REQUIRE _A_TIMIF
+    766          
+    767          /***************************************************************************************************
+    768           * @fn      halProcessTimer4
+    769           *
+    770           * @brief   Processes Timer 4 Events.
+    771           *
+    772           * @param
+    773           *
+    774           * @return
+    775           ***************************************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    776          void halProcessTimer4 (void)
+   \                     halProcessTimer4:
+    777          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    778            if (halTimerRecord[halTimerRemap(HAL_TIMER_2)].channelMode == HAL_TIMER_CH_MODE_OUTPUT_COMPARE)
+   \   000004                ; Setup parameters for call to function halTimerRemap
+   \   000004   7902         MOV     R1,#0x2
+   \   000006   12....       LCALL   ?Subroutine9 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000009   701B         JNZ     ??halProcessTimer4_0
+    779            {
+    780              if (TIMIF & TIMIF_T4CH0IF)
+   \   00000B   A2DC         MOV     C,0xd8.4
+   \   00000D   500B         JNC     ??halProcessTimer4_1
+    781              {
+    782                TIMIF &= ~(TIMIF_T4CH0IF);
+   \   00000F   C2DC         CLR     0xd8.4
+    783                halTimerSendCallBack (HAL_TIMER_2, HAL_TIMER_CHANNEL_A, HAL_TIMER_CH_MODE_OUTPUT_COMPARE);
+   \   000011                ; Setup parameters for call to function halTimerSendCallBack
+   \   000011   7B02         MOV     R3,#0x2
+   \   000013   7A02         MOV     R2,#0x2
+   \   000015   7902         MOV     R1,#0x2
+   \   000017   12....       LCALL   ??halTimerSendCallBack?relay
+    784              }
+    785              if (TIMIF & TIMIF_T4CH1IF)
+   \                     ??halProcessTimer4_1:
+   \   00001A   A2DD         MOV     C,0xd8.5
+   \   00001C   501E         JNC     ??halProcessTimer4_2
+    786              {
+    787                TIMIF &= ~(TIMIF_T4CH1IF);
+   \   00001E   C2DD         CLR     0xd8.5
+    788                halTimerSendCallBack (HAL_TIMER_2, HAL_TIMER_CHANNEL_B, HAL_TIMER_CH_MODE_OUTPUT_COMPARE);
+   \   000020                ; Setup parameters for call to function halTimerSendCallBack
+   \   000020   7B02         MOV     R3,#0x2
+   \   000022   7A04         MOV     R2,#0x4
+   \   000024   8011         SJMP    ??halProcessTimer4_3
+    789              }
+    790            }
+    791            else if (halTimerRecord[halTimerRemap(HAL_TIMER_2)].channelMode == HAL_TIMER_CH_MODE_OVERFLOW)
+   \                     ??halProcessTimer4_0:
+   \   000026                ; Setup parameters for call to function halTimerRemap
+   \   000026   7902         MOV     R1,#0x2
+   \   000028   12....       LCALL   ?Subroutine10 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   00002B   700F         JNZ     ??halProcessTimer4_2
+    792            if (TIMIF & TIMIF_T4OVFIF)
+   \   00002D   A2DB         MOV     C,0xd8.3
+   \   00002F   500B         JNC     ??halProcessTimer4_2
+    793            {
+    794              TIMIF &= ~(TIMIF_T4OVFIF);
+   \   000031   C2DB         CLR     0xd8.3
+    795              halTimerSendCallBack (HAL_TIMER_2, HAL_TIMER_CHANNEL_SINGLE, HAL_TIMER_CH_MODE_OVERFLOW);
+   \   000033                ; Setup parameters for call to function halTimerSendCallBack
+   \   000033   7B04         MOV     R3,#0x4
+   \   000035   7A01         MOV     R2,#0x1
+   \                     ??halProcessTimer4_3:
+   \   000037   7902         MOV     R1,#0x2
+   \   000039   12....       LCALL   ??halTimerSendCallBack?relay
+    796            }
+    797          }
+   \                     ??halProcessTimer4_2:
+   \   00003C   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   00003F                REQUIRE _A_TIMIF
+    798          
+    799          /***************************************************************************************************
+    800           *                                    INTERRUPT SERVICE ROUTINE
+    801           ***************************************************************************************************/
+    802          
+    803          /**************************************************************************************************
+    804           * @fn      halTimer1Isr
+    805           *
+    806           * @brief   Timer 1 ISR
+    807           *
+    808           * @param
+    809           *
+    810           * @return
+    811           **************************************************************************************************/
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    812          HAL_ISR_FUNCTION( halTimer1Isr, T1_VECTOR )
+   \                     halTimer1Isr:
+    813          { 
+   \   000000   C0D0         PUSH    PSW
+   \   000002   C0F0         PUSH    B
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    814              SHIRSendPin=~SHIRSendPin;
+   \   000004   D2F0         SETB    B.0
+   \   000006   A287         MOV     C,0x80.7
+   \   000008   30F001       JNB     B.0,??halTimer1Isr_0
+   \   00000B   B3           CPL     C
+   \                     ??halTimer1Isr_0:
+   \   00000C   9287         MOV     0x80.7,C
+    815            //halProcessTimer1 ();
+    816          }
+   \   00000E   D0F0         POP     B
+   \   000010   D0D0         POP     PSW
+   \   000012   32           RETI
+   \   000013                REQUIRE _A_P0
+    817          
+    818          /**************************************************************************************************
+    819           * @fn      halTimer3Isr
+    820           *
+    821           * @brief   Timer 3 ISR
+    822           *
+    823           * @param
+    824           *
+    825           * @return
+    826           **************************************************************************************************/
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    827          HAL_ISR_FUNCTION( halTimer3Isr, T3_VECTOR )
+   \                     halTimer3Isr:
+    828          {
+   \   000000   C0E0         PUSH    A
+   \   000002   74F2         MOV     A,#-0xe
+   \   000004   12....       LCALL   ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 14
+   \   000007                ; Auto size: 0
+    829            halProcessTimer3 ();
+   \   000007                ; Setup parameters for call to function halProcessTimer3
+   \   000007   12....       LCALL   ??halProcessTimer3?relay
+    830          }
+   \   00000A                REQUIRE ?Subroutine3
+   \   00000A                ; // Fall through to label ?Subroutine3
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?INTERRUPT_LEAVE_XSP
+    831          
+    832          /**************************************************************************************************
+    833           * @fn      halTimer4Isr
+    834           *
+    835           * @brief   Timer 4 ISR
+    836           *
+    837           * @param
+    838           *
+    839           * @return
+    840           **************************************************************************************************/
+
+   \                                 In  segment NEAR_CODE, align 1, keep-with-next
+    841          HAL_ISR_FUNCTION( halTimer4Isr, T4_VECTOR )
+   \                     halTimer4Isr:
+    842          {
+   \   000000   C0E0         PUSH    A
+   \   000002   74F2         MOV     A,#-0xe
+   \   000004   12....       LCALL   ?INTERRUPT_ENTER_XSP
+   \   000007                ; Saved register size: 14
+   \   000007                ; Auto size: 0
+    843            halProcessTimer4 ();
+   \   000007                ; Setup parameters for call to function halProcessTimer4
+   \   000007   12....       LCALL   ??halProcessTimer4?relay
+    844          }
+   \   00000A   80..         SJMP    ?Subroutine3
+
+   \                                 In  segment INTVEC, offset 0x4b, root
+   \                     `??halTimer1Isr??INTVEC 75`:
+   \   00004B   02....       LJMP       (halTimer1Isr)
+
+   \                                 In  segment INTVEC, offset 0x5b, root
+   \                     `??halTimer3Isr??INTVEC 91`:
+   \   00005B   02....       LJMP       (halTimer3Isr)
+
+   \                                 In  segment INTVEC, offset 0x63, root
+   \                     `??halTimer4Isr??INTVEC 99`:
+   \   000063   02....       LJMP       (halTimer4Isr)
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalTimerInit?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalTimerInit
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalTimerConfig?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalTimerConfig
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalTimerStart?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalTimerStart
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalTimerTick?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalTimerTick
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalTimerStop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalTimerStop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halTimerSetCount?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halTimerSetCount
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halTimerSetPrescale?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halTimerSetPrescale
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halTimerSetOpMode?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halTimerSetOpMode
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halTimerSetChannelMode?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halTimerSetChannelMode
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??HalTimerInterruptEnable?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    HalTimerInterruptEnable
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halTimerSendCallBack?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halTimerSendCallBack
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halTimerRemap?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halTimerRemap
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halProcessTimer1?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halProcessTimer1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halProcessTimer3?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halProcessTimer3
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??halProcessTimer4?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    halProcessTimer4
+    845          
+    846          /***************************************************************************************************
+    847          ***************************************************************************************************/
+    848          
+
+   Maximum stack usage in bytes:
+
+     Function                     ISTACK PSTACK XSTACK
+     --------                     ------ ------ ------
+     HalTimerConfig                   1      0     15
+       -> halTimerRemap               0      0     26
+     HalTimerInit                     2      0      0
+     HalTimerInterruptEnable          0      0     27
+     HalTimerStart                    0      0     16
+       -> halTimerRemap               0      0     32
+       -> halTimerSetCount            0      0     32
+       -> halTimerSetPrescale         0      0     32
+       -> halTimerSetOpMode           0      0     32
+       -> halTimerSetChannelMode      0      0     32
+       -> HalTimerInterruptEnable     0      0     32
+     HalTimerStop                     0      0      9
+       -> halTimerRemap               0      0     18
+       -> halTimerSetOpMode           0      0     18
+     HalTimerTick                     2      0      0
+       -> halProcessTimer1            4      0      0
+       -> halProcessTimer3            4      0      0
+       -> halProcessTimer4            4      0      0
+     halProcessTimer1                 2      0      0
+       -> halTimerRemap               4      0      0
+       -> halTimerSendCallBack        4      0      0
+       -> halTimerSendCallBack        4      0      0
+       -> halTimerSendCallBack        4      0      0
+       -> halTimerRemap               4      0      0
+       -> halTimerSendCallBack        4      0      0
+     halProcessTimer3                 2      0     14
+       -> halTimerRemap               4      0      0
+       -> halTimerSendCallBack        4      0      0
+       -> halTimerSendCallBack        4      0      0
+       -> halTimerRemap               4      0      0
+       -> halTimerSendCallBack        4      0      0
+     halProcessTimer4                 2      0     14
+       -> halTimerRemap               4      0      0
+       -> halTimerSendCallBack        4      0      0
+       -> halTimerSendCallBack        4      0      0
+       -> halTimerRemap               4      0      0
+       -> halTimerSendCallBack        4      0      0
+     halTimer1Isr                     2      0      0
+     halTimer3Isr                     0      0     14
+       -> halProcessTimer3            0      0     28
+     halTimer4Isr                     0      0     14
+       -> halProcessTimer4            0      0     28
+     halTimerRemap                    0      0     16
+     halTimerSendCallBack             0      0      9
+       -> halTimerRemap               0      0     18
+     halTimerSetChannelMode           2      0     16
+     halTimerSetCount                 1      0     32
+     halTimerSetOpMode                0      0     16
+     halTimerSetPrescale              0      0     16
+
+
+   Segment part sizes:
+
+     Function/Label                  Bytes
+     --------------                  -----
+     _A_P0                              1
+     _A_IEN1                            1
+     T3CTL                              1
+     T3CCTL0                            1
+     T3CCTL1                            1
+     _A_TIMIF                           1
+     T1CTL                              1
+     T1CCTL0                            1
+     T1CCTL1                            1
+     T1CCTL2                            1
+     T4CTL                              1
+     T4CCTL0                            1
+     T4CCTL1                            1
+     halTimerRecord                    30
+     halTimerChannel                   30
+     HalTimerInit                     184
+     ?Subroutine6                       2
+     ??Subroutine15_0                   6
+     ?Subroutine5                      11
+     ?Subroutine0                       7
+     HalTimerConfig                   137
+     ?Subroutine7                       5
+     ?Subroutine12                      9
+     HalTimerStart                    156
+     ?Subroutine1                       5
+     HalTimerTick                      34
+     HalTimerStop                      45
+     ?Subroutine2                       5
+     halTimerSetCount                 125
+     ?Subroutine13                      9
+     halTimerSetPrescale               42
+     halTimerSetOpMode                106
+     halTimerSetChannelMode            60
+     ??Subroutine16_0                   9
+     HalTimerInterruptEnable          136
+     ?Subroutine4                       2
+     ?Subroutine8                      10
+     halTimerSendCallBack              42
+     ?Subroutine14                     12
+     halTimerRemap                     29
+     halProcessTimer1                  87
+     ?Subroutine10                      6
+     ?Subroutine9                       6
+     ?Subroutine11                     15
+     halProcessTimer3                  62
+     halProcessTimer4                  63
+     halTimer1Isr                      19
+     halTimer3Isr                      10
+     ?Subroutine3                       5
+     halTimer4Isr                      12
+     ??halTimer1Isr??INTVEC 75          3
+     ??halTimer3Isr??INTVEC 91          3
+     ??halTimer4Isr??INTVEC 99          3
+     ??HalTimerInit?relay               6
+     ??HalTimerConfig?relay             6
+     ??HalTimerStart?relay              6
+     ??HalTimerTick?relay               6
+     ??HalTimerStop?relay               6
+     ??halTimerSetCount?relay           6
+     ??halTimerSetPrescale?relay        6
+     ??halTimerSetOpMode?relay          6
+     ??halTimerSetChannelMode?relay     6
+     ??HalTimerInterruptEnable?relay    6
+     ??halTimerSendCallBack?relay       6
+     ??halTimerRemap?relay              6
+     ??halProcessTimer1?relay           6
+     ??halProcessTimer3?relay           6
+     ??halProcessTimer4?relay           6
+
+ 
+ 1 427 bytes in segment BANKED_CODE
+    90 bytes in segment BANK_RELAYS
+     9 bytes in segment INTVEC
+    46 bytes in segment NEAR_CODE
+    13 bytes in segment SFR_AN
+    60 bytes in segment XDATA_Z
+ 
+ 1 563 bytes of CODE  memory (+  9 bytes shared)
+     0 bytes of DATA  memory (+ 13 bytes shared)
+    60 bytes of XDATA memory
+
+Errors: none
+Warnings: none

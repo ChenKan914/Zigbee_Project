@@ -1,0 +1,59 @@
+[DebugChecksum]
+Checksum=-1803472146
+[DisAssemblyWindow]
+NumStates=_ 1
+State 1=_ 1
+[InstructionProfiling]
+Enabled=_ 0
+[CodeCoverage]
+Enabled=_ 0
+[StackPlugin]
+Enabled=1
+OverflowWarningsEnabled=1
+WarningThreshold=90
+SpWarningsEnabled=1
+WarnHow=0
+UseTrigger=1
+TriggerName=main
+LimitSize=0
+ByteLimit=50
+[InterruptLog]
+LogEnabled=0
+SumEnabled=0
+GraphEnabled=0
+ShowTimeLog=1
+ShowTimeSum=1
+SumSortOrder=0
+[Interrupts]
+Enabled=1
+[MemoryMap]
+Enabled=0
+Base=0
+UseAuto=0
+TypeViolation=1
+UnspecRange=1
+ActionState=1
+[TraceHelper]
+Enabled=0
+ShowSource=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=0
+Leave target running=1
+[Aliases]
+A0=_ "C:\Users\Administrator\Desktop\Project\SmartHomeApp\Components\mac\low_level\srf04\single_chip\mac_mcu.c" ""
+A1=_ "C:\Users\Administrator\Desktop\Project\SmartHomeApp\Components\osal\common\OSAL_Timers.c" ""
+A2=_ "C:\Users\Administrator\Desktop\Project\SmartHomeApp\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A3=_ "C:\Users\Administrator\Desktop\Project\发短地址\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+A4=_ "E:\zigbee\软件资料\软件资料\开发例程\5.zigbee协议栈应用与组网\5.点播通讯-无线通讯\ZStack-CC2530-2.3.0-1.4.0\Components\zmac\f8w\zmac.c" ""
+A5=_ "E:\zigbee\软件资料\软件资料\开发例程\5.zigbee协议栈应用与组网\5.点播通讯-无线通讯\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\ZMain\TI2530DB\ZMain.c" ""
+Count=6
+SuppressDialog=1
